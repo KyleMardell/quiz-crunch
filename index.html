@@ -24,7 +24,10 @@
             <p>Create your own quiz by selecting a category, difficulty and number of questions (5-50), or go for the gold in <em>High Score Mode</em>!</p>
         </section>
         <section id="choices-section">
+            <button type="button" id="choose-quiz-btn">Choose My Quiz</button>
+            <button type="button" id="highscore-quiz-btn">Highscore Mode</button>
             <form id="choices-form">
+                <h3>Choose your quiz!</h3>
                 <label for="category-choice">Category</label>
                 <select name="category" id="category-choice" required>
                     <option value="any">Any</option>
@@ -46,6 +49,7 @@
                 <input type="number" id="question-amount" min="5" max="50" value="5" required>
                 <button type="submit" id="choices-submit">Get Questions</button>
             </form>
+
         </section>
         <section id="question-section"></section>
         <section id="score-section"></section>
