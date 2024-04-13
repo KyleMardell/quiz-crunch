@@ -5,8 +5,7 @@
     <!-- Meta -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Quiz Crunch. Trivia Quiz. Test your trivia knowledge.">
+    <meta name="description" content="Quiz Crunch. Trivia Quiz. Test your trivia knowledge.">
     <meta name="keywords" content="quiz, trivia, questions, knowledge, game, general knowledge">
     <title>Quiz Crunch</title>
     <!-- Styles -->
@@ -16,7 +15,7 @@
 <body>
     <!-- Header -->
     <header>
-        <h1>Quiz Crunch</h1>
+        <h1 class="header-text">Quiz Crunch</h1>
     </header>
 
     <!-- Main -->
@@ -24,15 +23,21 @@
 
         <!-- Welcome section -->
         <section id="welcome-section">
-            <h2>Welcome to Quiz Crunch!</h2>
-            <p>You can choose your quiz mode below.</p>
-            <p>Create your own quiz by selecting a category, difficulty and number of questions (5-50), or go for the gold in <em>High Score Mode</em>!</p>
+            <div id="welcome-message">
+                <h2>Welcome to Quiz Crunch!</h2>
+                <p>You can choose your quiz mode below.</p>
+                <p>Create your own quiz by selecting a category, difficulty and number of questions (5-50), or go for
+                    the gold in <em>High Score Mode</em>!</p>
+            </div>
+            <div id="quiz-mode-buttons">
+                <button type="button" id="choose-quiz-btn">Choose My Quiz</button>
+                <button type="button" id="highscore-quiz-btn">Highscore Mode</button>
+            </div>
         </section>
 
         <!-- Choices section -->
-        <section id="choices-section">
-            <button type="button" id="choose-quiz-btn">Choose My Quiz</button>
-            <button type="button" id="highscore-quiz-btn">Highscore Mode</button>
+        <section id="choices-section" class="hidden">
+
             <form id="choices-form">
                 <h3>Choose your quiz!</h3>
                 <label for="category-choice">Category</label>
@@ -59,7 +64,7 @@
         </section>
 
         <!-- Question section -->
-        <section id="question-section">
+        <section id="question-section" class="hidden">
             <div id="ready-to-play">
                 <h3>Are you ready?</h3>
                 <button type="button" id="play-btn">Let's Play!</button>
@@ -73,7 +78,9 @@
                 <button id="answer4" class="answer-btn"></button>
             </div>
         </section>
-        <section id="score-section">
+
+        <!-- Score section -->
+        <section id="score-section" class="hidden">
             <h2>Scores</h2>
             <div id="choice-scores">
                 <p>You scored (score goes here)</p>
