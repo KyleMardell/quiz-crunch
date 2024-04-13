@@ -21,9 +21,32 @@
         <section id="welcome-section">
             <h2>Welcome to Quiz Crunch!</h2>
             <p>You can choose your quiz mode below.</p>
-            <p>Create your own quiz by selecting a category, difficulty and number of questions, or go for the gold in ,<em>High Score Mode</em>!</p>
+            <p>Create your own quiz by selecting a category, difficulty and number of questions (5-50), or go for the gold in <em>High Score Mode</em>!</p>
         </section>
-        <section id="choices-section"></section>
+        <section id="choices-section">
+            <form id="choices-form">
+                <label for="category-choice">Category</label>
+                <select name="category" id="category-choice" required>
+                    <option value="any">Any</option>
+                    <option value="general-knowlegde">General Knowledge</option>
+                    <option value="games">Video Games</option>
+                    <option value="music">Music</option>
+                    <option value="sport">Sport</option>
+                    <option value="film">Film</option>
+                </select>
+                <fieldset id="difficulty">
+                    <label for="dif-easy">Easy</label>
+                    <input type="radio" id="dif-easy" name="difficulty" checked>
+                    <label for="dif-med">Medium</label>
+                    <input type="radio" id="dif-med" name="difficulty">
+                    <label for="dif-hard">Hard</label>
+                    <input type="radio" id="dif-hard" name="difficulty">
+                </fieldset>
+                <label for="question-amount">Number of questions</label>
+                <input type="number" id="question-amount" min="5" max="50" value="5" required>
+                <button type="submit" id="choices-submit">Get Questions</button>
+            </form>
+        </section>
         <section id="question-section"></section>
         <section id="score-section"></section>
     </main>
@@ -31,3 +54,13 @@
 </body>
 
 </html>
+
+<!--
+    <select name="cars" id="cars">
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="mercedes">Mercedes</option>
+  <option value="audi">Audi</option>
+</select>
+
+-->
