@@ -9,20 +9,27 @@
         content="Quiz Crunch. Trivia Quiz. Test your trivia knowledge.">
     <meta name="keywords" content="quiz, trivia, questions, knowledge, game, general knowledge">
     <title>Quiz Crunch</title>
-    <!-- Links -->
+    <!-- Styles -->
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
 <body>
+    <!-- Header -->
     <header>
         <h1>Quiz Crunch</h1>
     </header>
+
+    <!-- Main -->
     <main>
+
+        <!-- Welcome section -->
         <section id="welcome-section">
             <h2>Welcome to Quiz Crunch!</h2>
             <p>You can choose your quiz mode below.</p>
             <p>Create your own quiz by selecting a category, difficulty and number of questions (5-50), or go for the gold in <em>High Score Mode</em>!</p>
         </section>
+
+        <!-- Choices section -->
         <section id="choices-section">
             <button type="button" id="choose-quiz-btn">Choose My Quiz</button>
             <button type="button" id="highscore-quiz-btn">Highscore Mode</button>
@@ -49,22 +56,28 @@
                 <input type="number" id="question-amount" min="5" max="50" value="5" required>
                 <button type="submit" id="choices-submit">Get Questions</button>
             </form>
-
         </section>
-        <section id="question-section"></section>
+
+        <!-- Question section -->
+        <section id="question-section">
+            <div id="ready-to-play">
+                <h3>Are you ready?</h3>
+                <button type="button" id="play-btn">Let's Play!</button>
+            </div>
+            <div>
+                <h4>Question Number: <span   id="question-number">1</span></h4>
+                <h3 id="question">Question goes here</h3>
+                <button id="answer1" class="answer-btn"></button>
+                <button id="answer2" class="answer-btn"></button>
+                <button id="answer3" class="answer-btn"></button>
+                <button id="answer4" class="answer-btn"></button>
+            </div>
+        </section>
         <section id="score-section"></section>
     </main>
-    <script src="assets/js/script.js"></script>
+
+    <!-- Script -->
+    <script src="assets/js/quiz-script.js"></script>
 </body>
 
 </html>
-
-<!--
-    <select name="cars" id="cars">
-  <option value="volvo">Volvo</option>
-  <option value="saab">Saab</option>
-  <option value="mercedes">Mercedes</option>
-  <option value="audi">Audi</option>
-</select>
-
--->
