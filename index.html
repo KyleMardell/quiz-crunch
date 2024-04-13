@@ -25,28 +25,32 @@
         <section id="welcome-section">
             <img src="assets/images/logo.webp" alt="quiz-logo" class="quiz-logo">
             <hr class="blue-line">
+            <h2>Welcome to Quiz Crunch!</h2>
             <div id="welcome-message">
-                <h2>Welcome to Quiz Crunch!</h2>
-                <p>You can choose your quiz mode below.</p>
-                <p>Create your own quiz by selecting a category, difficulty and number of questions (5-50), or go for
-                    the gold in <em>High Score Mode</em>!</p>
+                <p class="passion-font">You can choose your quiz mode below.</p>
+                <p class="passion-font">Create your own quiz by selecting a category, difficulty and number of questions (5-50), or go for
+                    the gold in High Score Mode!</p>
             </div>
             <hr class="blue-line">
             <div id="quiz-mode-buttons">
-                <button type="button" id="choose-quiz-btn">Choose My Quiz</button>
-                <button type="button" id="highscore-quiz-btn">Highscore Mode</button>
+                <button type="button" id="choose-quiz-btn" class="passion-font input-colour">Choose My Quiz</button>
+                <button type="button" id="highscore-quiz-btn" class="passion-font input-colour">Highscore Mode</button>
             </div>
             <hr class="blue-line">
             <img src="assets/images/logo.webp" alt="quiz-logo" class="quiz-logo">
         </section>
 
         <!-- Choices section -->
-        <section id="choices-section" class="hidden">
-
-            <form id="choices-form">
-                <h3>Choose your quiz!</h3>
+        <section id="choices-section">
+            <img src="assets/images/logo.webp" alt="quiz-logo" class="quiz-logo">
+            <hr class="blue-line">
+            <h2>Choose your quiz!</h2>
+            <hr class="blue-line">
+            <form id="choices-form" class="passion-font">
+                <label for="question-amount">Number of questions</label>
+                <input class="passion-font input-colour" type="number" id="question-amount" min="5" max="50" value="5" required>
                 <label for="category-choice">Category</label>
-                <select name="category" id="category-choice" required>
+                <select class="passion-font input-colour" name="category" id="category-choice" required>
                     <option value="any">Any</option>
                     <option value="general-knowlegde">General Knowledge</option>
                     <option value="games">Video Games</option>
@@ -55,6 +59,7 @@
                     <option value="film">Film</option>
                 </select>
                 <fieldset id="difficulty">
+                    <legend>Difficulty</legend>
                     <label for="dif-easy">Easy</label>
                     <input type="radio" id="dif-easy" name="difficulty" checked>
                     <label for="dif-med">Medium</label>
@@ -62,16 +67,16 @@
                     <label for="dif-hard">Hard</label>
                     <input type="radio" id="dif-hard" name="difficulty">
                 </fieldset>
-                <label for="question-amount">Number of questions</label>
-                <input type="number" id="question-amount" min="5" max="50" value="5" required>
-                <button type="submit" id="choices-submit">Get Questions</button>
+                <button class="passion-font input-colour" type="submit" id="choices-submit">Get Questions</button>
             </form>
+            <hr class="blue-line">
+            <img src="assets/images/logo.webp" alt="quiz-logo" class="quiz-logo">
         </section>
 
         <!-- Question section -->
         <section id="question-section" class="hidden">
             <div id="ready-to-play">
-                <h3>Are you ready?</h3>
+                <h2>Are you ready?</h2>
                 <button type="button" id="play-btn">Let's Play!</button>
             </div>
             <div>
