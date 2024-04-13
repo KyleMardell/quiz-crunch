@@ -29,7 +29,10 @@ body {
     color: var(--off-white);
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
     font-family: "Bungee", sans-serif;
 }
 
@@ -37,9 +40,15 @@ h1, h2, h3, h4 {
     height: calc(100vh - 50px);
 }
 
+.blue-line {
+    border: none;
+    height: 2px;
+    background-color: var(--blue);
+}
+
 /* Header */
 
-header{
+header {
     position: fixed;
     z-index: 99;
     width: 100%;
@@ -78,25 +87,21 @@ main {
     margin: 20px;
 }
 
-#welcome-section > hr {
-    border: none;
-    height: 2px;
-    background-color: var(--blue);
-}
-
 #welcome-section {
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
     padding: 10px;
     height: 100%;
 }
 
-#welcome-message > h2 {
+#welcome-message>h2 {
     line-height: 30px;
     text-align: center;
     margin: 10px 0;
 }
-#welcome-message > p {
+
+#welcome-message>p {
     font-family: "Passion One", sans-serif;
     font-size: 1rem;
     letter-spacing: 1px;
@@ -112,12 +117,13 @@ main {
     justify-content: space-evenly;
 }
 
-#quiz-mode-buttons > button{
+#quiz-mode-buttons>button {
     border-radius: 5px;
-    height: 30px;
-    width: 110px;
+    height: 35px;
+    width: 40%;
     background-color: var(--deep-blue);
     color: var(--off-white);
+    font-weight: bold;
 }
 
 #choose-quiz-btn {
@@ -126,4 +132,55 @@ main {
 
 #highscore-quiz-btn {
     border: 2px solid var(--yellow);
+}
+
+@media screen and (min-width: 768px) {
+    
+    /* General styles */
+    .blue-line {
+        height: 4px;
+    }
+
+    /* Header */
+    header {
+        height: 75px;
+    }
+
+    .header-text {
+        font-size: 3.5rem;
+    }
+
+    /* Main Content */
+    main {
+        margin-top: 75px;
+    }
+
+    .full-screen {
+        max-height: calc(100vh - 75px);
+    }
+
+    /* Welcome Section */
+
+    #welcome-section {
+        max-width: 80%;
+        align-self: center;
+    }
+
+    .quiz-logo {
+        max-width: 150px;
+    }
+
+    #welcome-message>h2 {
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+    }
+
+    #welcome-message>p {
+        font-size: 1.8rem;
+    }
+
+    #quiz-mode-buttons>button {
+        font-size: 1.5em;
+        max-width: 300px;
+     }
 }
