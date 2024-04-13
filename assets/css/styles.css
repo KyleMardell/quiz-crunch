@@ -8,6 +8,8 @@
     --green: #8AC926;
     --blue: #1982C4;
     --purple: #6A4C93;
+    --deep-blue: #0d0221;
+    --off-white: #FAF9F6
 }
 
 /* Wildcard selector to override default styles */
@@ -23,18 +25,21 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background-color: #0d0221;
-    color: white;
+    background-color: var(--deep-blue);
+    color: var(--off-white);
 }
 
 h1, h2, h3, h4 {
     font-family: "Bungee", sans-serif;
 }
 
+.full-screen {
+    height: calc(100vh - 50px);
+}
+
 /* Header */
 
 header{
-    padding: 5px, 10px;
     position: fixed;
     z-index: 99;
     width: 100%;
@@ -50,6 +55,7 @@ header{
 
 .header-text {
     text-align: center;
+    line-height: 50px;
 }
 
 /* Main content */
@@ -62,4 +68,62 @@ main {
 
 .hidden {
     display: none;
+}
+
+/* Welcome section */
+
+.quiz-logo {
+    max-width: 100px;
+    align-self: center;
+    margin: 20px;
+}
+
+#welcome-section > hr {
+    border: none;
+    height: 2px;
+    background-color: var(--blue);
+}
+
+#welcome-section {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    height: 100%;
+}
+
+#welcome-message > h2 {
+    line-height: 30px;
+    text-align: center;
+    margin: 10px 0;
+}
+#welcome-message > p {
+    font-family: "Passion One", sans-serif;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    text-align: center;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+#quiz-mode-buttons {
+    margin: 10px 0;
+    padding: 10px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#quiz-mode-buttons > button{
+    border-radius: 5px;
+    height: 30px;
+    width: 110px;
+    background-color: var(--deep-blue);
+    color: var(--off-white);
+}
+
+#choose-quiz-btn {
+    border: 2px solid var(--green);
+}
+
+#highscore-quiz-btn {
+    border: 2px solid var(--yellow);
 }
