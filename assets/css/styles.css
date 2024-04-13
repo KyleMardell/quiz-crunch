@@ -1,7 +1,25 @@
 /* Google fonts import - Bungee and Passion One fonts*/
 @import url('https://fonts.googleapis.com/css2?family=Bungee&family=Passion+One:wght@400;700;900&display=swap');
 
+/* Wildcard selector to override default styles */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* General Styles */
+
 body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
     background-color: #0d0221;
     color: white;
 }
+
+h1, h2, h3, h4 {
+    font-family: "Bungee", sans-serif;
+}
+
+/* Header */
