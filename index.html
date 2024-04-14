@@ -34,8 +34,8 @@
             </div>
             <hr class="blue-line">
             <div id="quiz-mode-buttons">
-                <button type="button" id="choose-quiz-btn" class="passion-font input-colour">Choose My Quiz</button>
-                <button type="button" id="highscore-quiz-btn" class="passion-font input-colour">Highscore Mode</button>
+                <button type="button" id="choose-quiz-btn" class="passion-font input-style">Choose My Quiz</button>
+                <button type="button" id="highscore-quiz-btn" class="passion-font input-style">Highscore Mode</button>
             </div>
             <hr class="blue-line">
             <img src="assets/images/logo.webp" alt="quiz-logo" class="quiz-logo">
@@ -49,10 +49,10 @@
             <hr class="blue-line">
             <form id="choices-form" class="passion-font">
                 <label for="question-amount">Number of questions</label>
-                <input class="passion-font input-colour" type="number" id="question-amount" min="5" max="50" value="5"
+                <input class="passion-font input-style" type="number" id="question-amount" min="5" max="50" value="5"
                     required>
                 <label for="category-choice">Category</label>
-                <select class="passion-font input-colour" name="category" id="category-choice" required>
+                <select class="passion-font input-style" name="category" id="category-choice" required>
                     <option value="any">Any</option>
                     <option value="general-knowlegde">General Knowledge</option>
                     <option value="games">Video Games</option>
@@ -69,7 +69,7 @@
                     <label for="dif-hard">Hard</label>
                     <input type="radio" id="dif-hard" name="difficulty">
                 </fieldset>
-                <button class="passion-font input-colour" type="submit" id="submit-choices">Get Questions</button>
+                <button class="passion-font input-style" type="submit" id="submit-choices">Get Questions</button>
             </form>
             <hr class="blue-line">
             <img src="assets/images/logo.webp" alt="quiz-logo" class="quiz-logo">
@@ -79,32 +79,33 @@
         <section id="question-section">
             <div id="ready-area">
                 <h2>Are you ready?</h2>
-                <button type="button" class="passion-font" id="play-btn">Let's Play!</button>
+                <button type="button" class="passion-font input-style" id="play-btn">Let's Play!</button>
             </div>
             <div id="question-area">
                 <h4>Question Number <span id="question-number">1</span></h4>
                 <h3 id="question-text">Question goes here</h3>
                 <div id="answer-area">
-                    <button id="answer1" class="answer-btn passion-font">Answer 1</button>
-                    <button id="answer2" class="answer-btn passion-font">Answer 2</button>
-                    <button id="answer3" class="answer-btn passion-font">Answer 3</button>
-                    <button id="answer4" class="answer-btn passion-font">Answer 4</button>
+                    <button id="answer1" class="answer-btn passion-font input-style">Answer 1</button>
+                    <button id="answer2" class="answer-btn passion-font input-style">Answer 2</button>
+                    <button id="answer3" class="answer-btn passion-font input-style">Answer 3</button>
+                    <button id="answer4" class="answer-btn passion-font input-style">Answer 4</button>
                 </div>
             </div>
         </section>
 
         <!-- Score section -->
-        <section id="score-section" class="hidden">
+        <section id="score-section">
             <h2>Scores</h2>
             <div id="choice-scores">
-                <p>You scored (score goes here)</p>
+                <p class="passion-font">You scored <span id="choice-quiz-score">(score goes here)</span></p>
             </div>
             <div id="highscore-scores">
                 <h3>Highscores</h3>
-                <ol>
+                <ol id="highscore-quiz-scores" class="passion-font">
                     <li>Score goes here</li>
                 </ol>
             </div>
+            <button type="button" class="passion-font input-style" id="play-again">Play Again</button>
         </section>
     </main>
 

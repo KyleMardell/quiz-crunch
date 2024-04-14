@@ -103,9 +103,10 @@ main {
     margin: 20px;
 }
 
-.input-colour {
+.input-style {
     background-color: var(--deep-blue);
     color: var(--off-white);
+    border-radius: 5px;
 }
 
 /* Welcome section */
@@ -128,7 +129,6 @@ main {
 }
 
 #quiz-mode-buttons>button {
-    border-radius: 5px;
     height: 35px;
     width: 40%;
     font-weight: bold;
@@ -168,11 +168,11 @@ main {
     margin-bottom: 10px;
     text-align: center;
     border-radius: 5px;
+    height: 31px;
 }
 
-#choices-form>fieldset,
 #submit-choices {
-    border-radius: 5px;
+    height: 31px;
 }
 
 #question-amount {
@@ -184,8 +184,8 @@ main {
 }
 
 #difficulty-choice {
-    margin-top: 10px;
     margin-bottom: 20px;
+    border-radius: 5px;
     border: 2px solid var(--purple);
 }
 
@@ -195,24 +195,26 @@ main {
 }
 
 /* Question section */
-#ready-area {
+#question-section{
     display: none;
+}
+
+#ready-area {
+    display: flex;
     flex-direction: column;
     height: 40%;
     justify-content: space-evenly;
 }
 
-#ready-area>button {
+#play-btn {
     width: 150px;
     height: 35px;
     align-self: center;
     border: 2px solid var(--green);
-    background-color: var(--deep-blue);
-    color: var(--off-white);
 }
 
 #question-area {
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
 }
@@ -234,9 +236,6 @@ main {
 .answer-btn {
     min-height: 35px;
     width: 80vw;
-    background-color: var(--deep-blue);
-    color: var(--off-white);
-    border-radius: 5px;
 }
 
 #answer1 {
@@ -253,6 +252,45 @@ main {
 
 #answer4 {
     border: 2px solid var(--red);
+}
+
+/* Score section */
+#score-section {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#score-section>h2 {
+    margin: 50px 0;
+    font-size: 2rem;
+}
+
+#choice-scores {
+    display: flex;
+    flex-direction: column;
+}
+
+#choice-scores>p {
+    margin: 50px 0;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+#play-again {
+    margin: 50px 0;
+    border: 2px solid var(--green);
+    height: 35px;
+    min-width: 250px;
+}
+
+#highscore-scores {
+    display: flex;
+    flex-direction: column;
+}
+
+#highscore-scores>h3 {
+    margin: 10px 0;
 }
 
 /* Media query: tablet size screens and above(min 768px) */
@@ -354,5 +392,26 @@ main {
     .answer-btn {
         font-size: 1.5rem;
         max-width: 800px;
+    }
+
+    /* Score section */
+    #score-section>h2 {
+        font-size: 2.5rem;
+    }
+
+    #choice-scores>p {
+        font-size: 1.8rem;
+    }
+
+    #highscore-scores>h3 {
+        font-size: 2rem;
+    }
+
+    #highscore-quiz-scores {
+        font-size: 1.5rem;
+    }
+
+    #play-again {
+        font-size: 1.5rem;
     }
 }
