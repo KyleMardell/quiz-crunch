@@ -112,7 +112,7 @@ main {
 /* Welcome section */
 
 #welcome-section {
-    display: none;
+    display: flex;
 }
 
 #welcome-message>p {
@@ -195,7 +195,7 @@ main {
 }
 
 /* Question section */
-#question-section{
+#question-section {
     display: none;
 }
 
@@ -247,7 +247,7 @@ main {
 }
 
 #answer3 {
-    border: 2px solid var(--yellow);    
+    border: 2px solid var(--yellow);
 }
 
 #answer4 {
@@ -256,7 +256,7 @@ main {
 
 /* Score section */
 #score-section {
-    display: flex;
+    display: none;
     justify-content: flex-start;
     align-items: center;
 }
@@ -329,7 +329,7 @@ main {
         max-width: 150px;
     }
 
-    #welcome-message>h2 {
+    #welcome-section>h2 {
         font-size: 2.5rem;
         margin-bottom: 30px;
     }
