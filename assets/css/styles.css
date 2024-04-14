@@ -331,4 +331,28 @@ main {
     #category-choice {
         font-size: 1.5rem;
     }
+
+    /* Question section */
+    #ready-area>h2 {
+        font-size: 2.5rem;
+    }
+
+    #play-btn {
+        min-width: 300px;
+        min-height: 50px;
+        font-size: 2rem;
+    }
+
+    #question-area>h4 {
+        font-size: 1.5rem;
+    }
+
+    #question-text {
+        font-size: 2.5rem;
+    }
+
+    .answer-btn {
+        font-size: 1.5rem;
+        max-width: 800px;
+    }
 }
