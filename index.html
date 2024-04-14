@@ -28,7 +28,8 @@
             <h2>Welcome to Quiz Crunch!</h2>
             <div id="welcome-message">
                 <p class="passion-font">You can choose your quiz mode below.</p>
-                <p class="passion-font">Create your own quiz by selecting a category, difficulty and number of questions (5-50), or go for
+                <p class="passion-font">Create your own quiz by selecting a category, difficulty and number of questions
+                    (5-50), or go for
                     the gold in High Score Mode!</p>
             </div>
             <hr class="blue-line">
@@ -48,7 +49,8 @@
             <hr class="blue-line">
             <form id="choices-form" class="passion-font">
                 <label for="question-amount">Number of questions</label>
-                <input class="passion-font input-colour" type="number" id="question-amount" min="5" max="50" value="5" required>
+                <input class="passion-font input-colour" type="number" id="question-amount" min="5" max="50" value="5"
+                    required>
                 <label for="category-choice">Category</label>
                 <select class="passion-font input-colour" name="category" id="category-choice" required>
                     <option value="any">Any</option>
@@ -74,18 +76,20 @@
         </section>
 
         <!-- Question section -->
-        <section id="question-section" class="hidden">
-            <div id="ready-div">
+        <section id="question-section">
+            <div id="ready-area" class="hidden">
                 <h2>Are you ready?</h2>
-                <button type="button" id="play-btn">Let's Play!</button>
+                <button type="button" class="passion-font" id="play-btn">Let's Play!</button>
             </div>
-            <div id="question-div" class="hidden">
+            <div id="question-area">
                 <h4>Question Number: <span id="question-number">1</span></h4>
-                <h3 id="question">Question goes here</h3>
-                <button id="answer1" class="answer-btn"></button>
-                <button id="answer2" class="answer-btn"></button>
-                <button id="answer3" class="answer-btn"></button>
-                <button id="answer4" class="answer-btn"></button>
+                <h3 id="question-text">Question goes here</h3>
+                <div id="answer-area">
+                    <button id="answer1" class="answer-btn passion-font">Answer 1</button>
+                    <button id="answer2" class="answer-btn passion-font">Answer 2</button>
+                    <button id="answer3" class="answer-btn passion-font">Answer 3</button>
+                    <button id="answer4" class="answer-btn passion-font">Answer 4</button>
+                </div>
             </div>
         </section>
 
