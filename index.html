@@ -58,7 +58,7 @@
                     <option value="sport">Sport</option>
                     <option value="film">Film</option>
                 </select>
-                <fieldset id="difficulty">
+                <fieldset id="difficulty-choice">
                     <legend>Difficulty</legend>
                     <label for="dif-easy">Easy</label>
                     <input type="radio" id="dif-easy" name="difficulty" checked>
@@ -67,7 +67,7 @@
                     <label for="dif-hard">Hard</label>
                     <input type="radio" id="dif-hard" name="difficulty">
                 </fieldset>
-                <button class="passion-font input-colour" type="submit" id="choices-submit">Get Questions</button>
+                <button class="passion-font input-colour" type="submit" id="submit-choices">Get Questions</button>
             </form>
             <hr class="blue-line">
             <img src="assets/images/logo.webp" alt="quiz-logo" class="quiz-logo">
@@ -75,11 +75,11 @@
 
         <!-- Question section -->
         <section id="question-section" class="hidden">
-            <div id="ready-to-play">
+            <div id="ready-div">
                 <h2>Are you ready?</h2>
                 <button type="button" id="play-btn">Let's Play!</button>
             </div>
-            <div>
+            <div id="question-div" class="hidden">
                 <h4>Question Number: <span id="question-number">1</span></h4>
                 <h3 id="question">Question goes here</h3>
                 <button id="answer1" class="answer-btn"></button>
