@@ -8,7 +8,7 @@ const scoreSection = document.getElementById("score-section");
 // to the welcome section buttons and logo text
 document.addEventListener("DOMContentLoaded", function() {
     
-    // Display welcome section, hide all other sections
+    // Display welcome section, hide all other sections when clicked
     document.getElementById("logo-text").addEventListener("click", function() {
         console.log("logo clicked");
         displayWelcomeSection();
@@ -32,6 +32,7 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("highscore-quiz-btn").addEventListener("click", function() {
         console.log("highscore quiz clicked");
         toggleSectionsDisplay(welcomeSection, questionSection);
+        fetchQuizQuestions();
     });
 })
 
@@ -44,6 +45,9 @@ function toggleSectionsDisplay(currentSection, newSection) {
     newSection.style.display = "flex";
 }
 
+/**
+ * Display welcome section, hide all other sections
+ */
 function displayWelcomeSection() {
     choicesSection.style.display = "none";
     questionSection.style.display = "none";
@@ -51,4 +55,25 @@ function displayWelcomeSection() {
     welcomeSection.style.display = "flex";
 }
 
+/**
+ * Get questions from quiz API
+ */
+async function fetchQuizQuestions() {
+    const url = "https://opentdb.com/api.php?amount=50&difficulty=easy&type=multiple";
 
+    try {
+        const response = await fetch(url);
+
+        if(!response.ok) {
+            throw "Error, response not ok"
+        }
+
+        const questionsData = await response.json();
+        console.log(questionsData);
+        console.log(questionsData.results);
+        return questionsData.results;
+
+    } catch (error) {
+        console.log(error);
+    }
+}
