@@ -206,6 +206,14 @@ main {
     justify-content: space-evenly;
 }
 
+#user-name {
+    max-width: 350px;
+    height: 35px;
+    align-self: center;
+    text-align: center;
+    border: 2px solid var(--purple);
+}
+
 #play-btn {
     width: 150px;
     height: 35px;
