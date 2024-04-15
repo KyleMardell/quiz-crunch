@@ -135,7 +135,7 @@ main {
     font-size: 0.9rem;
 }
 
-#choose-quiz-btn {
+#user-quiz-btn {
     border: 2px solid var(--green);
 }
 
@@ -213,7 +213,7 @@ main {
     border: 2px solid var(--green);
 }
 
-#question-area {
+#game-area {
     display: none;
     flex-direction: column;
     align-items: center;
@@ -381,7 +381,7 @@ main {
         font-size: 2rem;
     }
 
-    #question-area>h4 {
+    #game-area>h4 {
         font-size: 1.5rem;
     }
 
