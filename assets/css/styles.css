@@ -84,7 +84,7 @@ header {
     border-right: 2px solid var(--green);
 }
 
-.header-text {
+#logo-text {
     text-align: center;
     line-height: 50px;
 }
@@ -306,7 +306,7 @@ main {
         height: 75px;
     }
 
-    .header-text {
+    #logo-text {
         font-size: 3.5rem;
     }
 

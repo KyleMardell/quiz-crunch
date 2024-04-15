@@ -4,16 +4,19 @@ const choicesSection = document.getElementById("choices-section");
 const questionSection = document.getElementById("question-section");
 const scoreSection = document.getElementById("score-section");
 
+// Wait for the DOM to load and add event listeners
+// to the welcome section buttons and logo text
 document.addEventListener("DOMContentLoaded", function() {
     
     // Display welcome section, hide all other sections
-    document.getElementById("header-text").addEventListener("click", function() {
+    document.getElementById("logo-text").addEventListener("click", function() {
         console.log("logo clicked");
         displayWelcomeSection();
     });
 
-    document.getElementById("header-text").addEventListener("keydown", function(event) {
+    document.getElementById("logo-text").addEventListener("keydown", function(event) {
         if (event.key === "Enter") {
+            console.log("logo clicked");
             displayWelcomeSection();
         }
     });
