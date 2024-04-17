@@ -6,15 +6,15 @@ const scoreSection = document.getElementById("score-section");
 
 // Wait for the DOM to load and add event listeners
 // to the welcome section buttons and logo text
-document.addEventListener("DOMContentLoaded", function() {
-    
+document.addEventListener("DOMContentLoaded", function () {
+
     // Display welcome section, hide all other sections when clicked
-    document.getElementById("logo-text").addEventListener("click", function() {
+    document.getElementById("logo-text").addEventListener("click", function () {
         console.log("logo clicked");
         displayWelcomeSection();
     });
 
-    document.getElementById("logo-text").addEventListener("keydown", function(event) {
+    document.getElementById("logo-text").addEventListener("keydown", function (event) {
         if (event.key === "Enter") {
             console.log("logo clicked");
             displayWelcomeSection();
@@ -22,14 +22,14 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     // Display user choice section when clicked
-    document.getElementById("user-quiz-btn").addEventListener("click", function() {
+    document.getElementById("user-quiz-btn").addEventListener("click", function () {
         console.log("choose quiz clicked");
         toggleSectionsDisplay(welcomeSection, choicesSection);
     });
 
 
     // Display question-secion when clicked
-    document.getElementById("highscore-quiz-btn").addEventListener("click", function() {
+    document.getElementById("highscore-quiz-btn").addEventListener("click", function () {
         console.log("highscore quiz clicked");
         toggleSectionsDisplay(welcomeSection, questionSection);
         fetchQuizQuestions();
@@ -64,7 +64,7 @@ async function fetchQuizQuestions() {
     try {
         const response = await fetch(url);
 
-        if(!response.ok) {
+        if (!response.ok) {
             throw "Error, response not ok"
         }
 
@@ -78,19 +78,25 @@ async function fetchQuizQuestions() {
     }
 }
 
-// Get the user selected quiz choices
+/**
+ * Get the user selected quiz choices
+ * @returns array of choices (amount, category, difficulty)
+ */
 function getUserSelection() {
     const questionAmount = document.getElementById("question-amount").value;
     const chosenDifficulty = document.querySelector("input[name='difficulty']:checked").id;
     const chosenCategory = document.getElementById("category-choice").value;
-    return[questionAmount, chosenCategory, chosenDifficulty];
+    return [questionAmount, chosenCategory, chosenDifficulty];
 }
 
-function processCategoryChoice(chosenArray) {
-    const chosenCategory = chosenArray[1];
+/**  
+ *  Process category choice for API use
+ * @returns category URL extension
+ * */
+function processCategoryChoice(chosenCategory) {
     let category = "";
 
-    switch(chosenCategory) {
+    switch (chosenCategory) {
         case "any":
             category = "";
             break;
@@ -117,10 +123,44 @@ function processCategoryChoice(chosenArray) {
     return category;
 }
 
+/**  
+ *  Process difficulty choice for API use
+ * @returns difficulty URL extension
+ * */
+function processDifficultyChoice(chosenDifficulty) {
+    let difficulty = "";
+
+    switch (chosenDifficulty) {
+        case "dif-easy":
+            difficulty = "&difficulty=easy";
+            break;
+        case "dif-med":
+            difficulty = "&difficulty=medium";
+            break;
+        case "dif-hard":
+            difficulty = "&difficulty=hard";
+            break;
+        default:
+            difficulty = "&difficulty=easy";
+    }
+
+    console.log("processed difficulty: " + difficulty)
+    return difficulty;
+}
+
+function createURL(chosenArray) {
+    const amount = `amount=${chosenArray[0]}`;
+    const category = processCategoryChoice(chosenArray[1]);
+    const difficulty = processDifficultyChoice(chosenArray[2]);
+    console.log("URL " + amount, category, difficulty);
+    return `https://opentdb.com/api.php?${amount}${category}${difficulty}`;
+}
+
 // Get and process user form data, create API URL and call the API fetch function
-document.getElementById("choices-form").addEventListener("submit", function(event) {
+document.getElementById("choices-form").addEventListener("submit", function (event) {
     event.preventDefault();
     const formData = getUserSelection();
+    console.log("form submitted");
     console.log("form data: " + formData);
-    processCategoryChoice(formData);
+    createURL(formData);
 })
