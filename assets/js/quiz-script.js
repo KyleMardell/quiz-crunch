@@ -61,7 +61,7 @@ function displayWelcomeSection() {
     choicesSection.style.display = "none";
     questionSection.style.display = "none";
     scoreSection.style.display = "none";
-    playArea.style.display = "none";
+    gameArea.style.display = "none";
     readyArea.style.display = "flex";
     welcomeSection.style.display = "flex";
 }
