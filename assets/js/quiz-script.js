@@ -82,12 +82,45 @@ async function fetchQuizQuestions() {
 function getUserSelection() {
     const questionAmount = document.getElementById("question-amount").value;
     const chosenDifficulty = document.querySelector("input[name='difficulty']:checked").id;
-    const chosenCategory = document.getElementById("category-choice").id;
+    const chosenCategory = document.getElementById("category-choice").value;
     return[questionAmount, chosenCategory, chosenDifficulty];
 }
 
+function processCategoryChoice(chosenArray) {
+    const chosenCategory = chosenArray[1];
+    let category = "";
+
+    switch(chosenCategory) {
+        case "any":
+            category = "";
+            break;
+        case "general-knowledge":
+            category = "&category=9";
+            break;
+        case "games":
+            category = "&category=15";
+            break;
+        case "music":
+            category = "&category=12";
+            break;
+        case "sport":
+            category = "&category=21";
+            break;
+        case "film":
+            category = "&category=11";
+            break;
+        default:
+            category = "";
+    }
+
+    console.log("processed category: " + category);
+    return category;
+}
+
+// Get and process user form data, create API URL and call the API fetch function
 document.getElementById("choices-form").addEventListener("submit", function(event) {
     event.preventDefault();
     const formData = getUserSelection();
-    console.log(formData);
+    console.log("form data: " + formData);
+    processCategoryChoice(formData);
 })
