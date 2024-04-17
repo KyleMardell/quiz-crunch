@@ -3,6 +3,12 @@ const welcomeSection = document.getElementById("welcome-section");
 const choicesSection = document.getElementById("choices-section");
 const questionSection = document.getElementById("question-section");
 const scoreSection = document.getElementById("score-section");
+const readyArea = document.getElementById("ready-area");
+const gameArea = document.getElementById("game-area");
+
+// Variables
+let quizQuestions = {};
+let playersName = "";
 
 // Wait for the DOM to load and add event listeners
 // to the welcome section buttons and logo text
@@ -28,11 +34,14 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    // Display question-secion when clicked
+    // Display question-secion when clicked and
+    // get 50 quiz questions from the quiz API
     document.getElementById("highscore-quiz-btn").addEventListener("click", function () {
         console.log("highscore quiz clicked");
         toggleSectionsDisplay(welcomeSection, questionSection);
-        fetchQuizQuestions();
+        const url = createURL(["50", "", "dif-easy"]);
+        fetchQuizQuestions(url);
+        console.log("quiz questions object: " + quizQuestions);
     });
 })
 
@@ -52,14 +61,16 @@ function displayWelcomeSection() {
     choicesSection.style.display = "none";
     questionSection.style.display = "none";
     scoreSection.style.display = "none";
+    playArea.style.display = "none";
+    readyArea.style.display = "flex";
     welcomeSection.style.display = "flex";
 }
 
 /**
  * Get questions from quiz API
  */
-async function fetchQuizQuestions() {
-    const url = "https://opentdb.com/api.php?amount=50&difficulty=easy&type=multiple";
+async function fetchQuizQuestions(url) {
+    //const url = "https://opentdb.com/api.php?amount=50&difficulty=easy&type=multiple";
 
     try {
         const response = await fetch(url);
@@ -69,12 +80,15 @@ async function fetchQuizQuestions() {
         }
 
         const questionsData = await response.json();
+
         console.log(questionsData);
         console.log(questionsData.results);
-        return questionsData.results;
+        
+        quizQuestions = questionsData.results;
 
     } catch (error) {
         console.log(error);
+        alert("An error ocurred. Please try again.");
     }
 }
 
@@ -148,6 +162,11 @@ function processDifficultyChoice(chosenDifficulty) {
     return difficulty;
 }
 
+/**
+ * Create the API URL from given parameters
+ * @param {*} chosenArray (amount, category, difficulty) 
+ * @returns API URL
+ */
 function createURL(chosenArray) {
     const amount = `amount=${chosenArray[0]}`;
     const category = processCategoryChoice(chosenArray[1]);
@@ -156,11 +175,38 @@ function createURL(chosenArray) {
     return `https://opentdb.com/api.php?${amount}${category}${difficulty}`;
 }
 
-// Get and process user form data, create API URL and call the API fetch function
+// When the user submits the quiz form 
+// get and process user form data,
+// create API URL and call the API fetch function
 document.getElementById("choices-form").addEventListener("submit", function (event) {
-    event.preventDefault();
-    const formData = getUserSelection();
     console.log("form submitted");
+    event.preventDefault();
+
+    const formData = getUserSelection();
     console.log("form data: " + formData);
-    createURL(formData);
+
+    const url = createURL(formData);
+    fetchQuizQuestions(url);
+    console.log(quizQuestions);
+
+    toggleSectionsDisplay(choicesSection, questionSection);
+})
+
+// Get the players name when the "let's play"
+// button is pressed and display 
+// the game area
+document.getElementById("play-btn").addEventListener("click", function(event) {
+    console.log("play button clicked");
+    event.preventDefault();
+    playersName = document.getElementById("user-name").value;
+
+    if(playersName === "") {
+        alert("Please enter your name");
+        return;
+    }
+
+    console.log("player name: " + playersName);
+    console.log(quizQuestions);
+    toggleSectionsDisplay(readyArea, gameArea);
+
 })
