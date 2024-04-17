@@ -77,3 +77,17 @@ async function fetchQuizQuestions() {
         console.log(error);
     }
 }
+
+// Get the user selected quiz choices
+function getUserSelection() {
+    const questionAmount = document.getElementById("question-amount").value;
+    const chosenDifficulty = document.querySelector("input[name='difficulty']:checked").id;
+    const chosenCategory = document.getElementById("category-choice").id;
+    return[questionAmount, chosenCategory, chosenDifficulty];
+}
+
+document.getElementById("choices-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+    const formData = getUserSelection();
+    console.log(formData);
+})
