@@ -10,9 +10,6 @@ const gameArea = document.getElementById("game-area");
 let quizQuestions = [];
 let playersName = "";
 
-// Regex
-const regexArray = ["&quot", ""];
-
 // Wait for the DOM to load and add event listeners
 // to the welcome section buttons and logo text
 document.addEventListener("DOMContentLoaded", function () {
@@ -85,7 +82,7 @@ async function fetchQuizQuestions(url) {
 
         console.log(questionsData);
         console.log(questionsData.results);
-        
+
         quizQuestions = questionsData.results;
 
     } catch (error) {
@@ -197,23 +194,28 @@ document.getElementById("choices-form").addEventListener("submit", function (eve
 // Get the players name when the "let's play"
 // button is pressed and display 
 // the game area
-document.getElementById("play-btn").addEventListener("click", function(event) {
+document.getElementById("play-btn").addEventListener("click", function (event) {
     console.log("play button clicked");
     event.preventDefault();
     playersName = document.getElementById("user-name").value;
 
-    if(playersName === "") {
+    if (playersName === "") {
         alert("Please enter your name");
         return;
     }
 
     console.log("player name: " + playersName);
-    console.log(quizQuestions);
+    console.log(quizQuestions.length);
     displayQuestion(quizQuestions[0]);
     toggleSectionsDisplay(readyArea, gameArea);
 
 })
 
+/**
+ * Displays a question
+ * questionData parameter is a single questio object
+ * from the quizQuestions array from the API
+ */
 function displayQuestion(questionData) {
     const answers = [
         questionData.correct_answer,
@@ -224,9 +226,43 @@ function displayQuestion(questionData) {
 
     answers.sort(() => Math.random() - 0.5);
 
-    document.getElementById("question-text").innerText = questionData.question;
+    document.getElementById("question-text").innerText = processQuestionString(questionData.question);
     document.getElementById("answer1").innerText = answers[0];
     document.getElementById("answer2").innerText = answers[1];
     document.getElementById("answer3").innerText = answers[2];
     document.getElementById("answer4").innerText = answers[3];
+}
+
+/**
+ * Removes regex strings from raw question data
+ * and replaces them with correct quote characters
+ */
+function processQuestionString(question) {
+    // Regex
+    const regex = /&quot;|&#039;/g;
+
+    const questionString = question.replace(regex, str => {
+        if(str === "&quot;") return '"';
+        if(str === "&#039;") return "'";
+    });
+
+    return questionString;
+}
+
+/**
+ * Play quiz function
+ * 
+ */
+// TO-DO 
+// Add function to check answer result
+// and display feedback to the user
+function playQuiz() {
+    const questionAmount = quizQuestions.length;
+    console.log(questionAmount);
+
+    const questionsArray = quizQuestions;
+
+    for (i = 0; i < questionAmount - 1; i++) {
+        displayQuestion(questionsArray[i]);
+    }
 }
