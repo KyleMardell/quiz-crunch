@@ -7,8 +7,11 @@ const readyArea = document.getElementById("ready-area");
 const gameArea = document.getElementById("game-area");
 
 // Variables
-let quizQuestions = {};
+let quizQuestions = [];
 let playersName = "";
+
+// Regex
+const regexArray = ["&quot", ""];
 
 // Wait for the DOM to load and add event listeners
 // to the welcome section buttons and logo text
@@ -41,7 +44,6 @@ document.addEventListener("DOMContentLoaded", function () {
         toggleSectionsDisplay(welcomeSection, questionSection);
         const url = createURL(["50", "", "dif-easy"]);
         fetchQuizQuestions(url);
-        console.log("quiz questions object: " + quizQuestions);
     });
 })
 
@@ -171,8 +173,8 @@ function createURL(chosenArray) {
     const amount = `amount=${chosenArray[0]}`;
     const category = processCategoryChoice(chosenArray[1]);
     const difficulty = processDifficultyChoice(chosenArray[2]);
-    console.log("URL " + amount, category, difficulty);
-    return `https://opentdb.com/api.php?${amount}${category}${difficulty}`;
+    console.log("URL: " + amount, category, difficulty);
+    return `https://opentdb.com/api.php?${amount}${category}${difficulty}&type=multiple`;
 }
 
 // When the user submits the quiz form 
@@ -207,6 +209,24 @@ document.getElementById("play-btn").addEventListener("click", function(event) {
 
     console.log("player name: " + playersName);
     console.log(quizQuestions);
+    displayQuestion(quizQuestions[0]);
     toggleSectionsDisplay(readyArea, gameArea);
 
 })
+
+function displayQuestion(questionData) {
+    const answers = [
+        questionData.correct_answer,
+        questionData.incorrect_answers[0],
+        questionData.incorrect_answers[1],
+        questionData.incorrect_answers[2]
+    ]
+
+    answers.sort(() => Math.random() - 0.5);
+
+    document.getElementById("question-text").innerText = questionData.question;
+    document.getElementById("answer1").innerText = answers[0];
+    document.getElementById("answer2").innerText = answers[1];
+    document.getElementById("answer3").innerText = answers[2];
+    document.getElementById("answer4").innerText = answers[3];
+}
