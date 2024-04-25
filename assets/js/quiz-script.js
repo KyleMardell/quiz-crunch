@@ -206,7 +206,7 @@ document.getElementById("play-btn").addEventListener("click", function (event) {
 
     console.log("player name: " + playersName);
     console.log(quizQuestions.length);
-    displayQuestion(quizQuestions[0]);
+
     toggleSectionsDisplay(readyArea, gameArea);
 
 })
@@ -226,7 +226,7 @@ function displayQuestion(questionData) {
 
     answers.sort(() => Math.random() - 0.5);
 
-    document.getElementById("question-text").innerText = processQuestionString(questionData.question);
+    document.getElementById("question-text").innerText = regexQuestionString(questionData.question);
     document.getElementById("answer1").innerText = answers[0];
     document.getElementById("answer2").innerText = answers[1];
     document.getElementById("answer3").innerText = answers[2];
@@ -237,8 +237,7 @@ function displayQuestion(questionData) {
  * Removes regex strings from raw question data
  * and replaces them with correct quote characters
  */
-function processQuestionString(question) {
-    // Regex
+function regexQuestionString(question) {
     const regex = /&quot;|&#039;/g;
 
     const questionString = question.replace(regex, str => {
@@ -249,6 +248,21 @@ function processQuestionString(question) {
     return questionString;
 }
 
+function checkAnswer(questionData, buttonPressed) {
+    const correctAnswer = questionData.correct_answer;
+    const chosenAnswer = document.getElementById(buttonPressed).innerText;
+    if ( chosenAnswer === correctAnswer){
+        // increment score
+        // display feedback
+        alert("Correct");
+        return true;
+    } else {
+        // incorrect ansewer feedback
+        alert("Wrong");
+        return false;
+    }
+}
+
 /**
  * Play quiz function
  * 
@@ -257,12 +271,17 @@ function processQuestionString(question) {
 // Add function to check answer result
 // and display feedback to the user
 function playQuiz() {
+
+    displayQuestion(quizQuestions[0]);
+
     const questionAmount = quizQuestions.length;
     console.log(questionAmount);
 
     const questionsArray = quizQuestions;
 
+    /*
     for (i = 0; i < questionAmount - 1; i++) {
         displayQuestion(questionsArray[i]);
     }
+    */
 }
