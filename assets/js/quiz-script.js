@@ -241,18 +241,24 @@ function displayQuestion(questionData) {
  * and replaces them with correct quote characters
  */
 function regexString(question) {
-    const regex = /&quot;|&#039;|&ouml;|&uuml;/g;
+    const regex = /&quot;|&#039;|&ouml;|&uuml;|&iacute;|&oacute;/g;
 
     const questionString = question.replace(regex, str => {
         if (str === "&quot;") return '"';
         if (str === "&#039;") return "'";
         if (str === "&ouml;") return "ö";
         if(str === "&uuml") return "ü";
+        if(str === "&iacute;") return "í";
+        if(str === "&oacute;") return "ó";
     });
 
     return questionString;
 }
 
+/**
+ * Checks if the user answered correctly
+ * returns true if the did, false if not
+ */
 function checkAnswer(correctAnswer, chosenAnswer) {
     if (chosenAnswer === correctAnswer) {
         // increment score
@@ -319,15 +325,22 @@ async function playQuiz() {
     const questionsArray = quizQuestions;
     const questionAmount = questionsArray.length;
 
+    let score = 0;
+
     for (i = 0; i < questionAmount - 1; i++) {
 
         displayQuestion(questionsArray[i]);
+        document.getElementById("question-number").innerText = i + 1;
+        document.getElementById("feedback-text").innerText = "Score: " + score + " / " + (i + 1);
+        document.getElementById("feedback-text").style.color = "var(--blue)";
+
         const userAnswer = await getAnswer();
         highlightAnswerButtons(questionsArray[i].correct_answer);
 
         if (checkAnswer(questionsArray[i].correct_answer, userAnswer)){
             document.getElementById("feedback-text").innerText = "Correct!";
             document.getElementById("feedback-text").style.color = "var(--green)";
+            score++;
         } else {
             document.getElementById("feedback-text").innerText = "Wrong :(";
             document.getElementById("feedback-text").style.color = "var(--red)";
