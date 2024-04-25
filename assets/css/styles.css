@@ -262,6 +262,11 @@ main {
     border: 2px solid var(--red);
 }
 
+#feedback-text{
+    margin-top: 20px;
+    color: var(--green);
+}
+
 /* Score section */
 #score-section {
     display: none;

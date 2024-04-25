@@ -231,6 +231,9 @@ function displayQuestion(questionData) {
     document.getElementById("answer2").innerText = regexString(answers[1]);
     document.getElementById("answer3").innerText = regexString(answers[2]);
     document.getElementById("answer4").innerText = regexString(answers[3]);
+
+    // reset feedback text
+    document.getElementById("feedback-text").innerText = "";
 }
 
 /**
