@@ -241,30 +241,25 @@ function displayQuestion(questionData) {
  * and replaces them with correct quote characters
  */
 function regexString(question) {
-    const regex = /&quot;|&#039;/g;
+    const regex = /&quot;|&#039;|&ouml;|&uuml;/g;
 
     const questionString = question.replace(regex, str => {
         if (str === "&quot;") return '"';
         if (str === "&#039;") return "'";
+        if (str === "&ouml;") return "ö";
+        if(str === "&uuml") return "ü";
     });
 
     return questionString;
 }
 
-function checkAnswer(questionData, buttonPressed) {
-    const correctAnswer = questionData.correct_answer;
-    const chosenAnswer = buttonPressed;
-
-    console.log(chosenAnswer);
-
+function checkAnswer(correctAnswer, chosenAnswer) {
     if (chosenAnswer === correctAnswer) {
         // increment score
         // display feedback
-        alert("Correct");
         return true;
     } else {
         // incorrect ansewer feedback
-        alert("Wrong");
         return false;
     }
 }
@@ -289,6 +284,31 @@ function getAnswer() {
 }
 
 /**
+ * Highlights the correct answer button in green
+ * and all the others in red 
+ */
+function highlightAnswerButtons(correctAnswer) {
+    const answerButtons = document.getElementsByClassName("answer-btn");
+    for (let button of answerButtons) {
+        if (button.innerText === correctAnswer) {
+            button.style.borderColor = "var(--green)";
+        } else {
+            button.style.borderColor = "var(--red)";
+        }
+    }
+}
+
+/**
+ * Resets answer button colours
+ */
+function resetAnswerButtonColours() {
+    document.getElementById("answer1").style.borderColor = "var(--green)";
+    document.getElementById("answer2").style.borderColor = "var(--purple)";
+    document.getElementById("answer3").style.borderColor = "var(--yellow)";
+    document.getElementById("answer4").style.borderColor = "var(--red)";
+}
+
+/**
  * Play quiz function
  * 
  */
@@ -298,12 +318,26 @@ function getAnswer() {
 async function playQuiz() {
     const questionsArray = quizQuestions;
     const questionAmount = questionsArray.length;
-    console.log(questionAmount);
 
     for (i = 0; i < questionAmount - 1; i++) {
+
         displayQuestion(questionsArray[i]);
         const userAnswer = await getAnswer();
-        checkAnswer(questionsArray[i], userAnswer);
+        highlightAnswerButtons(questionsArray[i].correct_answer);
+
+        if (checkAnswer(questionsArray[i].correct_answer, userAnswer)){
+            document.getElementById("feedback-text").innerText = "Correct!";
+            document.getElementById("feedback-text").style.color = "var(--green)";
+        } else {
+            document.getElementById("feedback-text").innerText = "Wrong :(";
+            document.getElementById("feedback-text").style.color = "var(--red)";
+        }
+
+        // Add a delay after feedback
+        await new Promise(resolve => setTimeout(resolve, 1500));
+
+
+        resetAnswerButtonColours();
     }
 
 }
