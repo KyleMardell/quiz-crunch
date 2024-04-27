@@ -279,12 +279,12 @@ main {
     font-size: 2rem;
 }
 
-#choice-scores {
+#game-score {
     display: flex;
     flex-direction: column;
 }
 
-#choice-scores>p {
+#game-score>p {
     margin: 50px 0;
     text-align: center;
     font-size: 1.5rem;
@@ -410,6 +410,7 @@ main {
 
     #question-text {
         font-size: 2.5rem;
+        line-height: 45px;
     }
 
     .answer-btn {
@@ -418,11 +419,11 @@ main {
     }
 
     /* Score section */
-    #score-section>h2 {
+    #game-score>h2 {
         font-size: 2.5rem;
     }
 
-    #choice-scores>p {
+    #game-score>p {
         font-size: 1.8rem;
     }
 

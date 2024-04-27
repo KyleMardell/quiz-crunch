@@ -241,7 +241,7 @@ function displayQuestion(questionData) {
  * and replaces them with correct quote characters
  */
 function regexString(question) {
-    const regex = /&quot;|&#039;|&ouml;|&uuml;|&iacute;|&oacute;/g;
+    const regex = /&quot;|&#039;|&ouml;|&uuml;|&iacute;|&oacute;|&Eacute;/g;
 
     const questionString = question.replace(regex, str => {
         if (str === "&quot;") return '"';
@@ -250,6 +250,7 @@ function regexString(question) {
         if(str === "&uuml") return "ü";
         if(str === "&iacute;") return "í";
         if(str === "&oacute;") return "ó";
+        if(str === "&Eacute;") return "É";
     });
 
     return questionString;
@@ -314,6 +315,15 @@ function resetAnswerButtonColours() {
     document.getElementById("answer4").style.borderColor = "var(--red)";
 }
 
+function displayScores(score, total) {
+
+    // TO DO If score > (total / 2) well done, else unlucky.
+
+    document.getElementById("quiz-score").innerHTML = `Well done ${playersName}, you scored ${score} / ${total}`;
+
+    // TO DO - Get highscores from local data and display them
+}
+
 /**
  * Play quiz function
  * 
@@ -327,11 +337,11 @@ async function playQuiz() {
 
     let score = 0;
 
-    for (i = 0; i < questionAmount - 1; i++) {
+    for (i = 0; i < questionAmount; i++) {
 
         displayQuestion(questionsArray[i]);
         document.getElementById("question-number").innerText = i + 1;
-        document.getElementById("feedback-text").innerText = "Score: " + score + " / " + (i + 1);
+        document.getElementById("feedback-text").innerText = "Score: " + score + " / " + questionAmount;
         document.getElementById("feedback-text").style.color = "var(--blue)";
 
         const userAnswer = await getAnswer();
@@ -353,4 +363,6 @@ async function playQuiz() {
         resetAnswerButtonColours();
     }
 
+    toggleSectionsDisplay(questionSection, scoreSection);
+    displayScores(score, questionAmount);
 }
