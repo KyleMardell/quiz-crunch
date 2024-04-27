@@ -42,6 +42,15 @@ document.addEventListener("DOMContentLoaded", function () {
         const url = createURL(["50", "", "dif-easy"]);
         fetchQuizQuestions(url);
     });
+
+    // Display scores section when clicked and
+    // display highscores from local data
+    document.getElementById("show-scores-btn").addEventListener("click", function () {
+        console.log("Show highscores clicked");
+        toggleSectionsDisplay(welcomeSection, scoreSection);
+        // TO DO - Add display highscore function call
+    });
+
 })
 
 /**
@@ -234,6 +243,9 @@ function displayQuestion(questionData) {
 
     // reset feedback text
     document.getElementById("feedback-text").innerText = "";
+
+    // Resets focus to first answer for accessibilty
+    document.getElementById("answer1").focus();
 }
 
 /**
@@ -315,11 +327,21 @@ function resetAnswerButtonColours() {
     document.getElementById("answer4").style.borderColor = "var(--red)";
 }
 
+/**
+ * Displays user score in the score section
+ * @param {* users score} score 
+ * @param {* number of questions} total 
+ */
 function displayScores(score, total) {
 
-    // TO DO If score > (total / 2) well done, else unlucky.
+    let scoreMessage = "";
 
-    document.getElementById("quiz-score").innerHTML = `Well done ${playersName}, you scored ${score} / ${total}`;
+    if (score > (total / 2)) {
+        scoreMessage = `Well done ${playersName}! You scored ${score} / ${total}`;
+    } else {
+        scoreMessage = `Unlucky ${playersName}. You scored ${score} / ${total}`;
+    }
+    document.getElementById("quiz-score").innerHTML = scoreMessage;
 
     // TO DO - Get highscores from local data and display them
 }
@@ -366,3 +388,5 @@ async function playQuiz() {
     toggleSectionsDisplay(questionSection, scoreSection);
     displayScores(score, questionAmount);
 }
+
+document.getElementById("play-again").addEventListener("click", displayWelcomeSection);

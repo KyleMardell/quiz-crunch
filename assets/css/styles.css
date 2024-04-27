@@ -143,6 +143,13 @@ main {
     border: 2px solid var(--yellow);
 }
 
+#show-scores-btn {
+    width: 50%;
+    height: 35px;
+    align-self: center;
+    border: 2px solid var(--purple);
+}
+
 /* Choices section */
 #choices-section {
     display: none;
@@ -352,8 +359,13 @@ main {
     }
 
     #quiz-mode-buttons>button {
-        font-size: 1.5em;
+        font-size: 1.5rem;
         max-width: 300px;
+    }
+
+    #show-scores-btn {
+        font-size: 1.5rem;
+        max-width: 500px;
     }
 
     /* Choices section */
