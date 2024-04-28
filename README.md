@@ -1,6 +1,8 @@
 # Quiz Crunch
 Quiz Crunch is a website aimed at trivia enthustiasts looking to test their knowledge, learn new trivia and play for a local highscore. Visitors of the site can choose to play a highscore mode of 50 random questions, or alternatively pick their own quiz, with options for the number of questions, question category and difficulty.
 
+![Responsive Mockup](/media/screenshots/responsive.png)
+
 - The deployed site can be found at - [Quiz Crunch Site](https://kylemardell.github.io/quiz-crunch/)
 - The repositary can be found at - [Quiz Crunch Repo](https://github.com/KyleMardell/quiz-crunch)
 
@@ -20,11 +22,19 @@ Quiz Crunch is a website aimed at trivia enthustiasts looking to test their know
 
 ### Colour Scheme
 
+![Colour Pallette](/media/design/colour-pallete.png)
+
 ### Typography
+
+![Fonts](/media/design/fonts.png)
 
 ### Logo
 
+![Logo](/assets/images/logo.webp)
+
 ### Wireframes
+
+![Mobile Wireframes](/media/design/wireframe.png)
 
 ## Features
 
@@ -34,9 +44,17 @@ Quiz Crunch is a website aimed at trivia enthustiasts looking to test their know
 
 #### Navigation Bar
 
+![Nav Bar](/media/screenshots/nav-bar.png)
+
 #### Welcome Section
 
+![Welcome Mobile](/media/screenshots/welcome-mobile.png) ![Welcome Tablet](/media/screenshots/welcome-tablet.png)
+![Welcome Desktop](/media/screenshots/welcome-desktop.png)
+
 #### Form Section
+
+![Form Mobile](/media/screenshots/form-mobile.png) ![Form Tablet](/media/screenshots/form-tablet.png)
+![Form Desktop](/media/screenshots/form-desktop.png)
 
 #### Ready Section
 
