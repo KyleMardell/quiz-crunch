@@ -98,5 +98,5 @@ The API used for this site is the [Open Trivia Database](https://opentdb.com/).
 
 ### Further Features
 
-There are many featured I implemented that I had learned through [freeCodeCamp]{}.
+There are many featured I implemented that I had learned through [freeCodeCamp](https://www.freecodecamp.org/).
 I had followed their front end development course and many of their additional youTube tutorials, learning the use of multiple JavaScript methods in addition to the [Code Institute](https://learn.codeinstitute.net/) course materials.
