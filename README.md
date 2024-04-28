@@ -64,9 +64,27 @@ Quiz Crunch is a website aimed at trivia enthustiasts looking to test their know
 
 #### Ready Section
 
+![Ready Tablet](/media/screenshots/ready-tablet.png)
+
+[Mobile Screenshot](/media/screenshots/ready-mobile.png)
+
+[Desktop Screenshot](/media/screenshots/ready-desktop.png)
+
 #### Quiz Section
 
+![Quiz Tablet](/media/screenshots/quiz-tablet.png)
+
+[Mobile Screenshot](/media/screenshots/quiz-mobile.png)
+
+[Desktop Screenshot](/media/screenshots/quiz-desktop.png)
+
 #### Scores Section
+
+![Scores Tablet](/media/screenshots/scores-tablet.png)
+
+[Mobile Screenshot](/media/screenshots/scores-mobile.png)
+
+[Desktop Screenshot](/media/screenshots/scores-desktop.png)
 
 ### Features To Add In The Future
 
