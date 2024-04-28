@@ -49,6 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log("Show highscores clicked");
         toggleSectionsDisplay(welcomeSection, scoreSection);
         // TO DO - Add display highscore function call
+        displayHighscores();
     });
 
 })
@@ -346,8 +347,12 @@ function displayScores(score, total) {
 
     // TO DO - Get highscores from local data and display them
     saveHighscore(score, playersName);
+    displayHighscores();
 }
 
+/**
+ * Saves scores to highscores in local storage
+ */
 function saveHighscore(newScore, userName) {
 
     // Get highScores array from local storage or create an empty array
@@ -373,6 +378,26 @@ function saveHighscore(newScore, userName) {
 }
 
 /**
+ * Creates a list items from highscores array
+ * and displays them in the scores section
+ */
+function displayHighscores() {
+    // Get highScores array from local storage or create an empty array
+    const highScores = JSON.parse(localStorage.getItem("quizHighscores")) || [];
+    let highscoreList = "";
+
+    if(highScores.length === 0){
+        highscoreList = '<li>No scores to display</li>';
+    } else {
+        for(score of highScores) {
+            highscoreList += `<li>${score.name} : ${score.score}</li>`;
+        }
+    }
+    
+    document.getElementById("highscores").innerHTML = highscoreList;
+}
+
+/**
  * Play quiz function
  * 
  */
@@ -393,9 +418,9 @@ async function playQuiz() {
         document.getElementById("feedback-text").style.color = "var(--blue)";
 
         const userAnswer = await getAnswer();
-        highlightAnswerButtons(questionsArray[i].correct_answer);
+        highlightAnswerButtons(regexString(questionsArray[i].correct_answer));
 
-        if (checkAnswer(questionsArray[i].correct_answer, userAnswer)){
+        if (checkAnswer(regexString(questionsArray[i].correct_answer), userAnswer)){
             document.getElementById("feedback-text").innerText = "Correct!";
             document.getElementById("feedback-text").style.color = "var(--green)";
             score++;

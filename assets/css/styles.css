@@ -304,12 +304,12 @@ main {
     min-width: 250px;
 }
 
-#highscore-scores {
+#highscore-container {
     display: flex;
     flex-direction: column;
 }
 
-#highscore-scores>h3 {
+#highscore-container>h3 {
     margin: 10px 0;
 }
 
@@ -439,11 +439,11 @@ main {
         font-size: 1.8rem;
     }
 
-    #highscore-scores>h3 {
+    #highscore-container>h3 {
         font-size: 2rem;
     }
 
-    #highscore-quiz-scores {
+    #highscores {
         font-size: 1.5rem;
     }
 
