@@ -253,7 +253,7 @@ function displayQuestion(questionData) {
  * and replaces them with correct quote characters
  */
 function regexString(question) {
-    const regex = /&quot;|&#039;|&ouml;|&uuml;|&iacute;|&oacute;|&Eacute;/g;
+    const regex = /&quot;|&#039;|&ouml;|&uuml;|&iacute;|&oacute;|&Eacute;|&amp;/g;
 
     const questionString = question.replace(regex, str => {
         if (str === "&quot;") return '"';
@@ -263,6 +263,7 @@ function regexString(question) {
         if(str === "&iacute;") return "í";
         if(str === "&oacute;") return "ó";
         if(str === "&Eacute;") return "É";
+        if(str === "&amp;") return "&";
     });
 
     return questionString;
@@ -344,6 +345,31 @@ function displayScores(score, total) {
     document.getElementById("quiz-score").innerHTML = scoreMessage;
 
     // TO DO - Get highscores from local data and display them
+    saveHighscore(score, playersName);
+}
+
+function saveHighscore(newScore, userName) {
+
+    // Get highScores array from local storage or create an empty array
+    const highScores = JSON.parse(localStorage.getItem("quizHighscores")) || [];
+    // create new score object from parameters
+    const score = {
+        name: userName,
+        score: newScore
+    };
+
+    // Add score to the highScores array
+    highScores.push(score);
+
+    // sort the array by highest score first
+    highScores.sort((a,b) => b.score - a.score);
+
+    // Cut array size to 5
+    highScores.splice(5);
+
+    // Set highScores array in local storage
+    localStorage.setItem("quizHighscores", JSON.stringify(highScores));
+    console.log(highScores);
 }
 
 /**
