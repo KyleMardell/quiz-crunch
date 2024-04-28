@@ -8,7 +8,6 @@ const gameArea = document.getElementById("game-area");
 
 // Variables
 let quizQuestions = [];
-let playersName = "";
 
 // Wait for the DOM to load and add event listeners
 // to the welcome section buttons and logo text
@@ -16,20 +15,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Display welcome section, hide all other sections when clicked
     document.getElementById("logo-text").addEventListener("click", function () {
-        console.log("logo clicked");
         displayWelcomeSection();
     });
 
     document.getElementById("logo-text").addEventListener("keydown", function (event) {
         if (event.key === "Enter") {
-            console.log("logo clicked");
             displayWelcomeSection();
         }
     });
 
     // Display user choice section when clicked
     document.getElementById("user-quiz-btn").addEventListener("click", function () {
-        console.log("choose quiz clicked");
         toggleSectionsDisplay(welcomeSection, choicesSection);
     });
 
@@ -37,7 +33,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // Display question-secion when clicked and
     // get 50 quiz questions from the quiz API
     document.getElementById("highscore-quiz-btn").addEventListener("click", function () {
-        console.log("highscore quiz clicked");
         toggleSectionsDisplay(welcomeSection, questionSection);
         const url = createURL(["50", "", "dif-easy"]);
         fetchQuizQuestions(url);
@@ -46,12 +41,13 @@ document.addEventListener("DOMContentLoaded", function () {
     // Display scores section when clicked and
     // display highscores from local data
     document.getElementById("show-scores-btn").addEventListener("click", function () {
-        console.log("Show highscores clicked");
         toggleSectionsDisplay(welcomeSection, scoreSection);
-        // TO DO - Add display highscore function call
         displayHighscores();
     });
 
+    // Return to welcome section when clicked
+    // from the highscores section
+    document.getElementById("play-again").addEventListener("click", displayWelcomeSection);
 })
 
 /**
@@ -76,34 +72,36 @@ function displayWelcomeSection() {
 }
 
 /**
- * Get questions from quiz API
+ * Get questions from quiz API using
+ * try/catch to handle any response errors
  */
 async function fetchQuizQuestions(url) {
-    //const url = "https://opentdb.com/api.php?amount=50&difficulty=easy&type=multiple";
 
+    // Try fetch quiz questions from the API
+    // using created input URL
     try {
         const response = await fetch(url);
 
+        // If the response is not ok, throw an error
         if (!response.ok) {
             throw "Error, response not ok"
         }
 
+        // Await API response and assign it to quizQuestions variable
         const questionsData = await response.json();
-
-        console.log(questionsData);
-        console.log(questionsData.results);
-
         quizQuestions = questionsData.results;
 
     } catch (error) {
+        // If an error occurs, display an alert and return to the welcome section
         console.log(error);
         alert("An error ocurred. Please try again.");
+        displayWelcomeSection();
     }
 }
 
 /**
  * Get the user selected quiz choices
- * @returns array of choices (amount, category, difficulty)
+ * returns array of choices (amount, category, difficulty)
  */
 function getUserSelection() {
     const questionAmount = document.getElementById("question-amount").value;
@@ -114,11 +112,11 @@ function getUserSelection() {
 
 /**  
  *  Process category choice for API use
- * @returns category URL extension
  * */
 function processCategoryChoice(chosenCategory) {
     let category = "";
 
+    // Checks user selection
     switch (chosenCategory) {
         case "any":
             category = "";
@@ -141,18 +139,16 @@ function processCategoryChoice(chosenCategory) {
         default:
             category = "";
     }
-
-    console.log("processed category: " + category);
     return category;
 }
 
 /**  
- *  Process difficulty choice for API use
- * @returns difficulty URL extension
+ * Process difficulty choice for API use
  * */
 function processDifficultyChoice(chosenDifficulty) {
     let difficulty = "";
 
+    // Checks user selection
     switch (chosenDifficulty) {
         case "dif-easy":
             difficulty = "&difficulty=easy";
@@ -166,21 +162,17 @@ function processDifficultyChoice(chosenDifficulty) {
         default:
             difficulty = "&difficulty=easy";
     }
-
-    console.log("processed difficulty: " + difficulty)
     return difficulty;
 }
 
 /**
- * Create the API URL from given parameters
- * @param {*} chosenArray (amount, category, difficulty) 
- * @returns API URL
+ * Create the API URL from given parameters array
+ * (amount, category, difficulty) 
  */
 function createURL(chosenArray) {
     const amount = `amount=${chosenArray[0]}`;
     const category = processCategoryChoice(chosenArray[1]);
     const difficulty = processDifficultyChoice(chosenArray[2]);
-    console.log("URL: " + amount, category, difficulty);
     return `https://opentdb.com/api.php?${amount}${category}${difficulty}&type=multiple`;
 }
 
@@ -188,16 +180,12 @@ function createURL(chosenArray) {
 // get and process user form data,
 // create API URL and call the API fetch function
 document.getElementById("choices-form").addEventListener("submit", function (event) {
-    console.log("form submitted");
     event.preventDefault();
 
     const formData = getUserSelection();
-    console.log("form data: " + formData);
-
     const url = createURL(formData);
-    fetchQuizQuestions(url);
-    console.log(quizQuestions);
 
+    fetchQuizQuestions(url);
     toggleSectionsDisplay(choicesSection, questionSection);
 })
 
@@ -205,28 +193,28 @@ document.getElementById("choices-form").addEventListener("submit", function (eve
 // button is pressed and display 
 // the game area
 document.getElementById("play-btn").addEventListener("click", function (event) {
-    console.log("play button clicked");
     event.preventDefault();
-    playersName = document.getElementById("user-name").value;
 
-    if (playersName === "") {
+    // Get username
+    const userName = document.getElementById("user-name").value;
+
+    // Checks username is not empty
+    if (userName === "") {
         alert("Please enter your name");
         return;
     }
 
-    console.log("player name: " + playersName);
-    console.log(quizQuestions.length);
-    //displayQuestion(quizQuestions[0]);
+    // Change display to game/quiz section and run quiz
     toggleSectionsDisplay(readyArea, gameArea);
-    playQuiz();
+    playQuiz(userName);
 })
 
 /**
- * Displays a question
- * questionData parameter is a single questio object
- * from the quizQuestions array from the API
+ * Displays a question and
+ * answers in a random order
  */
 function displayQuestion(questionData) {
+    // Create an array of answers
     const answers = [
         questionData.correct_answer,
         questionData.incorrect_answers[0],
@@ -234,8 +222,10 @@ function displayQuestion(questionData) {
         questionData.incorrect_answers[2]
     ]
 
+    // Randomise answer order
     answers.sort(() => Math.random() - 0.5);
 
+    // Display question and answers
     document.getElementById("question-text").innerText = regexString(questionData.question);
     document.getElementById("answer1").innerText = regexString(answers[0]);
     document.getElementById("answer2").innerText = regexString(answers[1]);
@@ -256,15 +246,16 @@ function displayQuestion(questionData) {
 function regexString(question) {
     const regex = /&quot;|&#039;|&ouml;|&uuml;|&iacute;|&oacute;|&Eacute;|&amp;/g;
 
+    // Checks if a regex is found and replaces it
     const questionString = question.replace(regex, str => {
         if (str === "&quot;") return '"';
         if (str === "&#039;") return "'";
         if (str === "&ouml;") return "ö";
-        if(str === "&uuml") return "ü";
-        if(str === "&iacute;") return "í";
-        if(str === "&oacute;") return "ó";
-        if(str === "&Eacute;") return "É";
-        if(str === "&amp;") return "&";
+        if (str === "&uuml") return "ü";
+        if (str === "&iacute;") return "í";
+        if (str === "&oacute;") return "ó";
+        if (str === "&Eacute;") return "É";
+        if (str === "&amp;") return "&";
     });
 
     return questionString;
@@ -272,15 +263,11 @@ function regexString(question) {
 
 /**
  * Checks if the user answered correctly
- * returns true if the did, false if not
  */
 function checkAnswer(correctAnswer, chosenAnswer) {
     if (chosenAnswer === correctAnswer) {
-        // increment score
-        // display feedback
         return true;
     } else {
-        // incorrect ansewer feedback
         return false;
     }
 }
@@ -288,16 +275,19 @@ function checkAnswer(correctAnswer, chosenAnswer) {
 /**
  * Gets the users chosen answer from
  * the button pressed
- * @returns chosen answer string
+ * returns chosen answer string
  */
 function getAnswer() {
+    // Await answer button press
     return new Promise((resolve) => {
         const answerButtons = document.getElementsByClassName("answer-btn");
 
+        // Returns the text of the chosen answer button
         function answerSelected(event) {
             const answer = event.target.innerText;
             resolve(answer);
         }
+        // Loop through the answer buttons, apply once only event listener
         for (let button of answerButtons) {
             button.addEventListener("click", answerSelected, { once: true });
         }
@@ -309,8 +299,10 @@ function getAnswer() {
  * and all the others in red 
  */
 function highlightAnswerButtons(correctAnswer) {
+    // Get and loop through all buttons
     const answerButtons = document.getElementsByClassName("answer-btn");
     for (let button of answerButtons) {
+        // check if the button text is the same as the correct answer
         if (button.innerText === correctAnswer) {
             button.style.borderColor = "var(--green)";
         } else {
@@ -331,23 +323,20 @@ function resetAnswerButtonColours() {
 
 /**
  * Displays user score in the score section
- * @param {* users score} score 
- * @param {* number of questions} total 
  */
-function displayScores(score, total) {
+function displayScores(score, total, userName) {
 
     let scoreMessage = "";
 
+    // Check if users correct answer score is
+    // more than 50% of total questions answered
     if (score > (total / 2)) {
-        scoreMessage = `Well done ${playersName}! You scored ${score} / ${total}`;
+        scoreMessage = `Well done ${userName}! You scored ${score} / ${total}`;
     } else {
-        scoreMessage = `Unlucky ${playersName}. You scored ${score} / ${total}`;
+        scoreMessage = `Unlucky ${userName}. You scored ${score} / ${total}`;
     }
-    document.getElementById("quiz-score").innerHTML = scoreMessage;
 
-    // TO DO - Get highscores from local data and display them
-    saveHighscore(score, playersName);
-    displayHighscores();
+    document.getElementById("quiz-score").innerHTML = scoreMessage;
 }
 
 /**
@@ -367,14 +356,13 @@ function saveHighscore(newScore, userName) {
     highScores.push(score);
 
     // sort the array by highest score first
-    highScores.sort((a,b) => b.score - a.score);
+    highScores.sort((a, b) => b.score - a.score);
 
     // Cut array size to 5
     highScores.splice(5);
 
     // Set highScores array in local storage
     localStorage.setItem("quizHighscores", JSON.stringify(highScores));
-    console.log(highScores);
 }
 
 /**
@@ -386,14 +374,17 @@ function displayHighscores() {
     const highScores = JSON.parse(localStorage.getItem("quizHighscores")) || [];
     let highscoreList = "";
 
-    if(highScores.length === 0){
+    // Check if highscores already exist
+    if (highScores.length === 0) {
         highscoreList = '<li>No scores to display</li>';
     } else {
-        for(score of highScores) {
+        // Create highscores list in html
+        for (score of highScores) {
             highscoreList += `<li>${score.name} : ${score.score}</li>`;
         }
     }
-    
+
+    // Display message to user
     document.getElementById("highscores").innerHTML = highscoreList;
 }
 
@@ -401,26 +392,34 @@ function displayHighscores() {
  * Play quiz function
  * 
  */
-// TO-DO 
-// Add function to check answer result
-// and display feedback to the user
-async function playQuiz() {
+async function playQuiz(playersName) {
+    // Assign questions and amount variables from stored aPI results
     const questionsArray = quizQuestions;
     const questionAmount = questionsArray.length;
 
+    // Initialise user quiz score
     let score = 0;
 
+    // Loop through questions
     for (i = 0; i < questionAmount; i++) {
 
+        // Display current question
         displayQuestion(questionsArray[i]);
+
+        // Display current score and question number
         document.getElementById("question-number").innerText = i + 1;
         document.getElementById("feedback-text").innerText = "Score: " + score + " / " + questionAmount;
         document.getElementById("feedback-text").style.color = "var(--blue)";
 
+        // Await users answer input
         const userAnswer = await getAnswer();
+
+        // Highlight correct answer
         highlightAnswerButtons(regexString(questionsArray[i].correct_answer));
 
-        if (checkAnswer(regexString(questionsArray[i].correct_answer), userAnswer)){
+        // Check is the answer is correct and increment score if so
+        // and show feedback message
+        if (checkAnswer(regexString(questionsArray[i].correct_answer), userAnswer)) {
             document.getElementById("feedback-text").innerText = "Correct!";
             document.getElementById("feedback-text").style.color = "var(--green)";
             score++;
@@ -432,12 +431,15 @@ async function playQuiz() {
         // Add a delay after feedback
         await new Promise(resolve => setTimeout(resolve, 1500));
 
-
         resetAnswerButtonColours();
     }
 
+    // Display scores after a quiz finishes
+    displayScores(score, questionAmount, playersName);
+    saveHighscore(score, playersName);
+    displayHighscores();
+
+    // Change display to scores section
     toggleSectionsDisplay(questionSection, scoreSection);
-    displayScores(score, questionAmount);
 }
 
-document.getElementById("play-again").addEventListener("click", displayWelcomeSection);
