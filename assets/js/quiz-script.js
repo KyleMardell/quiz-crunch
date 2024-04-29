@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Return to welcome section when clicked
     // from the highscores section
     document.getElementById("play-again").addEventListener("click", displayWelcomeSection);
-})
+});
 
 /**
  * Toggle the display style (flex, none)
@@ -84,7 +84,7 @@ async function fetchQuizQuestions(url) {
 
         // If the response is not ok, throw an error
         if (!response.ok) {
-            throw "Error, response not ok"
+            throw "Error, response not ok";
         }
 
         // Await API response and assign it to quizQuestions variable
@@ -187,7 +187,7 @@ document.getElementById("choices-form").addEventListener("submit", function (eve
 
     fetchQuizQuestions(url);
     toggleSectionsDisplay(choicesSection, questionSection);
-})
+});
 
 // Get the players name when the "let's play"
 // button is pressed and display 
@@ -207,7 +207,7 @@ document.getElementById("play-btn").addEventListener("click", function (event) {
     // Change display to game/quiz section and run quiz
     toggleSectionsDisplay(readyArea, gameArea);
     playQuiz(userName);
-})
+});
 
 /**
  * Displays a question and
@@ -220,7 +220,7 @@ function displayQuestion(questionData) {
         questionData.incorrect_answers[0],
         questionData.incorrect_answers[1],
         questionData.incorrect_answers[2]
-    ]
+    ];
 
     // Randomise answer order
     answers.sort(() => Math.random() - 0.5);
@@ -379,7 +379,7 @@ function displayHighscores() {
         highscoreList = '<li>No scores to display</li>';
     } else {
         // Create highscores list in html
-        for (score of highScores) {
+        for (let score of highScores) {
             highscoreList += `<li>${score.name} : ${score.score}</li>`;
         }
     }
@@ -401,7 +401,7 @@ async function playQuiz(playersName) {
     let score = 0;
 
     // Loop through questions
-    for (i = 0; i < questionAmount; i++) {
+    for (let i = 0; i < questionAmount; i++) {
 
         // Display current question
         displayQuestion(questionsArray[i]);
