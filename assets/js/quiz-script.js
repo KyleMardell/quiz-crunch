@@ -244,18 +244,20 @@ function displayQuestion(questionData) {
  * and replaces them with correct quote characters
  */
 function regexString(question) {
-    const regex = /&quot;|&#039;|&ouml;|&uuml;|&iacute;|&oacute;|&Eacute;|&amp;/g;
+    const regex = /&quot;|&#039;|&ouml;|&uuml;|&iacute;|&oacute;|&Eacute;|&amp;|&eacute;|&rsquo;/g;
 
     // Checks if a regex is found and replaces it
     const questionString = question.replace(regex, str => {
         if (str === "&quot;") return '"';
         if (str === "&#039;") return "'";
+        if (str === "&rsquo;") return "'";
         if (str === "&ouml;") return "ö";
         if (str === "&uuml") return "ü";
         if (str === "&iacute;") return "í";
         if (str === "&oacute;") return "ó";
         if (str === "&Eacute;") return "É";
         if (str === "&amp;") return "&";
+        if ( str === "&eacute;") return "é";
     });
 
     return questionString;

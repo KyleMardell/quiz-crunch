@@ -189,4 +189,4 @@ I had followed their front end development course and many of their additional y
 
 ## Known bugs
 
-- A bug where text shows special character codes. I have added a number of special character codes to a regex function, but there are over 80 in use today. For this project i felt it sufficient to add a few main ones to catch the most commonly encountered character codes, although the others will be shown.
+- A bug where text shows special character codes. I have added a number of special character codes to a regex function, but there are over 100 commonly in use today. For this project i felt it sufficient to add a few main ones to catch the most commonly encountered character codes, although the others will be shown.
