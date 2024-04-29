@@ -185,8 +185,3 @@ The API used for this site is the [Open Trivia Database](https://opentdb.com/).
 There are many features I implemented that I had learned through [freeCodeCamp](https://www.freecodecamp.org/).
 I had followed their front end development course and many of their additional youTube tutorials, learning the use of multiple JavaScript methods in addition to the [Code Institute](https://learn.codeinstitute.net/) course materials.
 
-## Bugs
-
-## Known bugs
-
-- A bug where text shows special character codes. I have added a number of special character codes to a regex function, but there are over 100 commonly in use today. For this project i felt it sufficient to add a few main ones to catch the most commonly encountered character codes, although the others will be shown.
