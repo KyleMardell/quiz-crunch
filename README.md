@@ -142,6 +142,11 @@ The scores section is where the user can view highscores. These highscores are s
 
 ### Features To Add In The Future
 
+In the future i would like to improve upon the site by adding the following features
+    - Timed mode
+    - Mode specific highscores
+    - Online highscores
+
 ## Deployment
 - The site was deployed using GitHub Pages.
 - The repositary can be found at - https://github.com/KyleMardell/quiz-crunch
