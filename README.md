@@ -118,6 +118,18 @@ The quiz section of the site is where the questions are displayed and the user p
 
 [Desktop Screenshot](/media/screenshots/quiz-desktop.png)
 
+[Mobile Correct Answer](/media/screenshots/quiz-correct-mobile.png)
+
+[Tablet Correct Answer](/media/screenshots/quiz-correct-tablet.png)
+
+[Desktop Correct Answer](/media/screenshots/quiz-correct-desktop.png)
+
+[Mobile Incorrect Answer](/media/screenshots/quiz-wrong-mobile.png)
+
+[Tablet Incorrect Answer](/media/screenshots/quiz-wrong-tablet.png)
+
+[Desktop Incorrect Answer](/media/screenshots/quiz-wrong-desktop.png)
+
 #### Scores Section
 
 The scores section is where the user can view highscores. These highscores are stored using browser local storage and are therefore local to the users device and can be cleared at any time through browser settings. There is also a message to let the user know if no highscores are found.
@@ -179,9 +191,3 @@ I learned about local storage through the [freeCodeCamp](https://www.freecodecam
 
 I learned the use of API's (Application Programming Interface) through [freeCodeCamps](https://www.youtube.com/watch?v=WXsD0ZgxjRw&t=8252s) YouTube course, and followed a YouTube tutorial on the [Pokemon API](https://www.youtube.com/watch?v=37vxWr0WgQk&t=673s) to get a better understanding of API's in practice. I also created a small project using a few different API's before applying these methods in my code for Quiz Crunch.
 The API used for this site is the [Open Trivia Database](https://opentdb.com/).
-
-### Further Features
-
-There are many features I implemented that I had learned through [freeCodeCamp](https://www.freecodecamp.org/).
-I had followed their front end development course and many of their additional youTube tutorials, learning the use of multiple JavaScript methods in addition to the [Code Institute](https://learn.codeinstitute.net/) course materials.
-
