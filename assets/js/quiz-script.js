@@ -209,8 +209,6 @@ document.getElementById("play-btn").addEventListener("click", function (event) {
 
     // Change display to game/quiz section and run quiz
     toggleSectionsDisplay(readyArea, gameArea);
-    console.log("play game");
-    console.log(quizQuestions);
     playQuiz(userName);
 });
 
@@ -425,9 +423,6 @@ async function playQuiz(playersName) {
 
         // Display current question
         displayQuestion(questionsArray[i]);
-        console.log("i = " + (i + 1));
-        console.log("Amount" + questionAmount);
-        console.log(questionsArray);
 
         // Display current score and question number
         document.getElementById("question-number").innerText = i + 1;

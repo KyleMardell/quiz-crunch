@@ -6,20 +6,36 @@ The site was deployed to GitHub Pages early in development to initially check de
 
 ## Validator
 
+The following validation tools were used to validate the sites code.
+
 - HTML Testing Using The [W3C Validator](https://validator.w3.org/)
-    - [Quiz Crunch HTML Validation](https://validator.w3.org/nu/?doc=https%3A%2F%2Fkylemardell.github.io%2Fquiz-crunch%2F)
-![HTML Validation](/media/testing/html-validation.png)
+    - [HTML Validation Link](https://validator.w3.org/nu/?doc=https%3A%2F%2Fkylemardell.github.io%2Fquiz-crunch%2F)
+    - [HTML Validation Results](/media/testing/html-validation.png)
 - CSS Testing Using The [Jigsaw Validator](https://jigsaw.w3.org/css-validator/)
-    - [Quiz Crunch CSS Validation] (https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fkylemardell.github.io%2Fquiz-crunch%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
-![CSS Validation](/media/testing/css-validation.png)
+    - [CSS Validation Link](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fkylemardell.github.io%2Fquiz-crunch%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+    - [CSS Validation Results](/media/testing/css-validation.png)
 - JavaScript Testing Using The [jshint Validator](https://jshint.com/)
-![JS Validation](/media/testing/js-validation.png)
+    - [JavaScript Validation Results](/media/testing/js-validation.png)
 
 ## Lighthouse
 
+I used lighhouse within the Google Chrome Developer tools to test the site for accessibilty, performance, SEO, and best practices. The site recieved 100 across all categories when testing on PC and when testing on mobile 99 for performance, with all other scores at 100.
+
+- [Lighthouse Validation PC Results](/media/testing/lighthouse-desktop.png)
+- [Lighthouse Validation Mobile Results](/media/testing/lighthouse-mobile.png)
+
 ## Wave
 
+I ran the website through WAVE, the Web Accessibility Evaluation Tool, to check the accessibility of the site. There are no warning, with 3 alerts. There are 2 alerts for possibhle headings and 1 for a skipped heading. These are due to paragraph elements being used and the question number(h4) being displayed above the question(h3) on screen.
+
+- [WAVE Validation Results](/media/testing/wave-summary.png)
+- [WAVE Validation Details](/media/testing/wave-details.png)
+
 ## User Testing
+
+Later in the development process i asked some friends, and course peers to test the site for use and potential bugs. 
+Overall initial feedback was positive with no major design changes or changes to the flow of the site needed. The only design feedback was to increase the size of text in some areas of the site.
+User feedback also helped to test for bugs. Any bugs found from user testing are listed in the [Bugs](#bugs) section.
 
 ## Site Testing
 
@@ -27,7 +43,9 @@ The site was deployed to GitHub Pages early in development to initially check de
 
 ### Fixed In Development
 
-- API was returning true/false questions as I had forgotten to add the multiple choice only option to the URL. This was caught the first time I displayed the answers to the answer buttons and added the URL extenstion for multiple choice only questions. 
+- The API being used was returning true/false questions as I had forgotten to add the multiple choice only option to the URL. This was caught the first time I displayed the answers to the answer buttons and added the URL extenstion for multiple choice only questions. 
+
+- A bug where if the player clicked the logo link while playing a quiz, then started a new quiz, it would only play the remaining questions from the previous quiz before ending. Resulting in the second quiz only having 2/3 questions before ending. This was because the playQuiz function is asynchronus and was still running when the player exited a quiz early. To fix this, i added a boolean value called continueQuiz and an additional event listener to the logo button. If it is pressed when in a quiz, the event listener set continueQuiz to false and breaks from the current quiz loop and then returns from the current playQuiz function. This remedied the bug, meaning only one instance of the playQuiz function is running at any one time. This bug was caught in initial user testing.
 
 ### Known bugs
 

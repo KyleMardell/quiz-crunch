@@ -56,7 +56,7 @@ I used Microsoft Paint and the chosen colour palette to create a simple logo. I 
 
 Before developing the site I mocked up some simple wire-frames of some of the sections, in a mobile screen format. This helped when creating the sections and understanding the flow of the site, aiding in easier development. I ended up expanding on the sections in my initial wire-frame although it helped to establish a theme for the site. I made the site responsive by limiting the width to maintain a similar look to my initial wire-frame designs across all screen sizes.
 
-![Mobile Wireframes](/media/design/wireframe.png)
+[Mobile Wireframes](/media/design/wireframe.png)
 
 ## Features
 
