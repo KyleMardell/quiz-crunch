@@ -407,6 +407,19 @@ async function playQuiz(playersName) {
     // Initialise user quiz score
     let score = 0;
 
+    // Bool to check if the quizz should continue
+    let continueQuiz = true;
+
+    // Get the logo text
+    const welcomeSectionLink = document.getElementById("logo-text");
+    
+    // Set continueQuiz to false and remove event listener to avoid conflicts
+    const welcomeListener = function () {
+        continueQuiz = false;
+        welcomeSectionLink.removeEventListener("click", welcomeListener);
+    };
+    welcomeSectionLink.addEventListener("click", welcomeListener);
+
     // Loop through questions
     for (let i = 0; i < questionAmount; i++) {
 
@@ -442,6 +455,16 @@ async function playQuiz(playersName) {
         await new Promise(resolve => setTimeout(resolve, 1500));
 
         resetAnswerButtonColours();
+
+        // Check if the quiz shoulc continue
+        if(!continueQuiz) {
+            break;
+        }
+    }
+
+    // Check if the quiz should continue
+    if(!continueQuiz) {
+        return;
     }
 
     // Display scores after a quiz finishes
