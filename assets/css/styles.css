@@ -119,6 +119,7 @@ main {
     text-align: center;
     padding: 5px;
     margin-bottom: 10px;
+    font-size: 20px;
 }
 
 #quiz-mode-buttons {
@@ -164,6 +165,10 @@ main {
     justify-content: center;
     text-align: center;
     color: var(--off-white);
+}
+
+#choices-section>p {
+    text-align: center;
 }
 
 #choices-form>label,
@@ -378,6 +383,10 @@ main {
     #choices-form {
         width: 300px;
         align-self: center;
+    }
+
+    #choices-section>p {
+        font-size: 1.4rem;
     }
 
     #choices-section>h2 {

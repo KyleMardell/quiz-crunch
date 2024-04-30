@@ -90,7 +90,7 @@ From here users can:
 
 #### Form Section
 
-Users can choose their own quiz to play, with options for the number of questions, difficulty (easy, medium and hard), and category (any, general knowledge, video games, music, sport, film).
+Users can choose their own quiz to play, with options for the number of questions, difficulty (easy, medium and hard), and category (any, general knowledge, video games, music, sport, film). Scores from a user selected quiz also count towards the local highscores.
 
 ![Form Tablet](/media/screenshots/form-tablet.png)
 
@@ -143,9 +143,9 @@ The scores section is where the user can view highscores. These highscores are s
 ### Features To Add In The Future
 
 In the future i would like to improve upon the site by adding the following features
-    - Timed mode
-    - Mode specific highscores
-    - Online highscores
+- Timed mode
+- Mode specific highscores
+- Online highscores
 
 ## Deployment
 - The site was deployed using GitHub Pages.
