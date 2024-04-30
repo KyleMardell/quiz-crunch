@@ -171,9 +171,13 @@ main {
     text-align: center;
 }
 
+#choices-section>h2 {
+    font-size: 2rem;
+}
+
 #choices-form>label,
 #choices-form>fieldset>legend {
-    font-size: 1.2rem;
+    font-size: 2rem;
 }
 
 #choices-form>input,
@@ -182,6 +186,7 @@ main {
     text-align: center;
     border-radius: 5px;
     height: 31px;
+    font-size: 1.5rem;
 }
 
 #submit-choices {
@@ -200,11 +205,13 @@ main {
     margin-bottom: 20px;
     border-radius: 5px;
     border: 2px solid var(--purple);
+    font-size: 1.5rem;
 }
 
 #submit-choices {
     border: 2px solid var(--yellow);
-    font-size: 1.2rem;
+    font-size: 2rem;
+    height: 35px;
 }
 
 /* Question section */
@@ -289,7 +296,8 @@ main {
 
 #score-section>h2 {
     margin: 50px 0;
-    font-size: 2rem;
+    font-size: 3.5rem;
+    text-decoration: underline;
 }
 
 #game-score {
@@ -298,9 +306,9 @@ main {
 }
 
 #game-score>p {
-    margin: 50px 0;
+    margin: 20px 0;
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 2rem;
 }
 
 #play-again {
@@ -308,6 +316,7 @@ main {
     border: 2px solid var(--green);
     height: 35px;
     min-width: 250px;
+    font-size: 1.5rem;
 }
 
 #highscore-container {
@@ -317,6 +326,12 @@ main {
 
 #highscore-container>h3 {
     margin: 10px 0;
+    font-size: 2rem;
+}
+
+#highscores {
+    font-size: 1.8rem;
+    margin-left: 20px;
 }
 
 /* Media query: tablet size screens and above(min 768px) */
@@ -390,13 +405,13 @@ main {
     }
 
     #choices-section>h2 {
-        font-size: 2.5rem;
+        font-size: 3rem;
     }
 
     #choices-form>label,
     #choices-form>fieldset>legend,
     #submit-choices {
-        font-size: 1.8rem;
+        font-size: 2rem;
     }
 
     #question-amount,
@@ -441,23 +456,24 @@ main {
     }
 
     /* Score section */
-    #game-score>h2 {
-        font-size: 2.5rem;
+    #score-section>h2 {
+        font-size: 5rem;
     }
 
     #game-score>p {
-        font-size: 1.8rem;
+        font-size: 3rem;
     }
 
     #highscore-container>h3 {
-        font-size: 2rem;
+        font-size: 3.5rem;
     }
 
     #highscores {
-        font-size: 1.5rem;
+        font-size: 2.5rem;
     }
 
     #play-again {
-        font-size: 1.5rem;
+        height: 75px;
+        font-size: 2.5rem;
     }
 }
