@@ -33,11 +33,19 @@ I ran the website through WAVE, the Web Accessibility Evaluation Tool, to check 
 
 ## User Testing
 
-Later in the development process i asked some friends, and course peers to test the site for use and potential bugs. 
+Later in the development process I asked some friends, and course peers to test the site for use and potential bugs. 
 Overall initial feedback was positive with no major design changes or changes to the flow of the site needed. The only design feedback was to increase the size of text in some areas of the site.
 User feedback also helped to test for bugs. Any bugs found from user testing are listed in the [Bugs](#bugs) section.
 
 ## Site Testing
+
+### Testing In Development
+
+- HTML & CSS
+    While developing the site I used Google Chrome Developer Tools to check the layout and responsiveness of the site. Developing from a mobile first perspective, using the latest "Galaxy Z Fold" screen size as my initial design platform, and limiting the section width on larger screens to create a similar layout across all screen sizes, with increased text size to make use of the additional screen space. 
+
+- JavaScript
+    Testing JavaScript in development done with a combination of Google Chrome Developer Tools and the Console Log function. I used the console log to display messages when a user clicked a button, the data from the API, and multiple variables values to check that the code was behaving as intended. Once I was confident that the site was working as expected, I then removed all the console logs to make my code cleaner and more readble. If any bugs were found, I would console log values in the area of the bug to find the cause and create a fix.
 
 ## Bugs
 
@@ -45,10 +53,12 @@ User feedback also helped to test for bugs. Any bugs found from user testing are
 
 - The API being used was returning true/false questions as I had forgotten to add the multiple choice only option to the URL. This was caught the first time I displayed the answers to the answer buttons and added the URL extenstion for multiple choice only questions. 
 
-- A bug where if the player clicked the logo link while playing a quiz, then started a new quiz, it would only play the remaining questions from the previous quiz before ending. Resulting in the second quiz only having 2/3 questions before ending. This was because the playQuiz function is asynchronus and was still running when the player exited a quiz early. To fix this, i added a boolean value called continueQuiz and an additional event listener to the logo button. If it is pressed when in a quiz, the event listener set continueQuiz to false and breaks from the current quiz loop and then returns from the current playQuiz function. This remedied the bug, meaning only one instance of the playQuiz function is running at any one time. This bug was caught in initial user testing.
+- A bug where if the player clicked the logo link while playing a quiz, then started a new quiz, it would only play the remaining questions from the previous quiz before ending. Resulting in the second quiz only having 2/3 questions before ending. This was because the playQuiz function is asynchronus and was still running when the player exited a quiz early. To fix this, i added a boolean value called continueQuiz and an additional event listener to the logo button. If the logo is pressed when in a quiz, the event listener set continueQuiz to false and breaks from the current quiz loop and then returns from the current playQuiz function. This remedied the bug, meaning only one instance of the playQuiz function is running at any one time. This bug was caught in initial user testing.
 
 ### Known bugs
 
-- A bug where text shows special character codes. I have added a number of special character codes to a regex function, but there are over 100 commonly in use today. For this project i felt it sufficient to add a few main ones to catch the most commonly encountered character codes, although the others will be shown.
+- A bug where text shows special character codes. I have added a number of special character codes to a regex function, but there are over 100 commonly in use today. For this project I felt it sufficient to add a few main ones to catch the most commonly encountered character codes, although the others will be shown.
 
 - If the user tries to get too many quiz question calls from the API, it can cause an error. This is caused by calling the API too many times, too quickly. When this happens, I have implemented an alert message and navigated the user back to the welcome section.
+
+- A bug where all answer boxes are displayed in red after a user presses an answer. This bug is very occasional.

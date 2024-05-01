@@ -60,6 +60,14 @@ Before developing the site I mocked up some simple wire-frames of some of the se
 
 ## Features
 
+The site is made up of one single page, split into 5 different sections, with only one section being shown at once. The 5 sections are welcome, form, ready, quiz and highscores.
+
+From the welcome section the user can decide to choose their own quiz, play a random 50 quwstion quiz or view their local highscores. 
+
+When playing the quiz, the question will be shown with 4 answers each in their own box. The user must press/click on their chosen answer to submit it. Once an answer has been pressed, the correct answers border is momentarily changed to green and all incorrect answers to res. There is also a "correct / wrong" feedback message displayed in place of the current score. The next question is automatically displayed until all questions have been played. There is no time limit to any questions.
+
+Once all questions have been answered, the scores section is displayed, showing the ended quiz score and the top 5 highscores. This page can be viewed before playing a quiz, with a "no score to display" message shown.
+
 ### Existing Features
 
 #### Favicon
@@ -132,7 +140,7 @@ The quiz section of the site is where the questions are displayed and the user p
 
 #### Scores Section
 
-The scores section is where the user can view highscores. These highscores are stored using browser local storage and are therefore local to the users device and can be cleared at any time through browser settings. There is also a message to let the user know if no highscores are found.
+The scores section is where the user can view highscores. These highscores are stored using browser local storage and are therefore local to the users device and can be cleared at any time through browser settings. There is also a message to let the user know if no highscores are found, or no current quiz has been played.
 
 ![Scores Tablet](/media/screenshots/scores-tablet.png)
 
@@ -140,12 +148,17 @@ The scores section is where the user can view highscores. These highscores are s
 
 [Desktop Screenshot](/media/screenshots/scores-desktop.png)
 
+### Accessibility
+
+As I wanted to make a simple quiz site for any players, accessibility was always in mind when developing the site. I made sure to use semantic HTML for screen reader users and a high contrast colour palette for visual aid. As the site has a simple layout, I also tried to make text as large as possible without overly compromising the design of the site.
+
 ### Features To Add In The Future
 
 In the future i would like to improve upon the site by adding the following features
 - Timed mode
 - Mode specific highscores
 - Online highscores
+- Additional categories
 
 ## Deployment
 - The site was deployed using GitHub Pages.
