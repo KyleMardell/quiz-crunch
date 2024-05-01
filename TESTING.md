@@ -45,7 +45,7 @@ User feedback also helped to test for bugs. Any bugs found from user testing are
     While developing the site I used Google Chrome Developer Tools to check the layout and responsiveness of the site. Developing from a mobile first perspective, using the latest "Galaxy Z Fold" screen size as my initial design platform, and limiting the section width on larger screens to create a similar layout across all screen sizes, with increased text size to make use of the additional screen space. 
 
 - JavaScript
-    Testing JavaScript in development done with a combination of Google Chrome Developer Tools and the Console Log function. I used the console log to display messages when a user clicked a button, the data from the API, and multiple variables values to check that the code was behaving as intended. Once I was confident that the site was working as expected, I then removed all the console logs to make my code cleaner and more readble. If any bugs were found, I would console log values in the area of the bug to find the cause and create a fix.
+    Testing JavaScript in development done with a combination of Google Chrome Developer Tools and the Console Log function. I used the console log to display messages when a user clicked a button, the data from the API, and multiple variables values to check that the code was behaving as intended. Once I was confident that the site was working as expected, I then removed all the console logs to make my code cleaner and more readable. If any bugs were found, I would console log values in the area of the bug to try find the cause and create a fix.
 
 ## Bugs
 

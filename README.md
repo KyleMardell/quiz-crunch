@@ -64,7 +64,7 @@ The site is made up of one single page, split into 5 different sections, with on
 
 From the welcome section the user can decide to choose their own quiz, play a random 50 quwstion quiz or view their local highscores. 
 
-When playing the quiz, the question will be shown with 4 answers each in their own box. The user must press/click on their chosen answer to submit it. Once an answer has been pressed, the correct answers border is momentarily changed to green and all incorrect answers to res. There is also a "correct / wrong" feedback message displayed in place of the current score. The next question is automatically displayed until all questions have been played. There is no time limit to any questions.
+When playing the quiz, the question will be shown with 4 answers each in their own box. The user must press/click on their chosen answer to submit it. Once an answer has been pressed, the correct answers border is momentarily changed to green and all incorrect answers to red. There is also a "correct / wrong" feedback message displayed in place of the current score. The next question is automatically displayed until all questions have been played. There is no time limit to any questions.
 
 Once all questions have been answered, the scores section is displayed, showing the ended quiz score and the top 5 highscores. This page can be viewed before playing a quiz, with a "no score to display" message shown.
 
