@@ -33,8 +33,14 @@ I ran the website through WAVE, the Web Accessibility Evaluation Tool, to check 
 
 ## User Testing
 
-Later in the development process I asked some friends, and course peers to test the site for use and potential bugs. 
-Overall initial feedback was positive with no major design changes or changes to the flow of the site needed. The only design feedback was to increase the size of text in some areas of the site.
+Later in the development process I asked some friends, and course peers to test the site for usability and potential bugs. Overall initial feedback was positive with no major design changes or changes to the flow of the site needed. 
+
+The initial feedback requiring changes to the site was, to increase the size of text in some areas sections. After recieving this feedback I tried to increase the text size across the majority of the site, leading to better readability. 
+
+Secondly, in the form section users thought the "Get Questions" button should be green with either a green background, or green text to indicate that this button proceeds to the next section. With this feedback in mind, I changed the border and text colour to green to signify is it a submit button, also making the site feel more intuitive.
+
+Some users feedback was that the high-score mode should be named differently, such as "practice mode" or "iron/hard mode", as all scores count towards the highscore board. This is agreed with and after some thought, I decided to change the name to "Marathon Mode" as it felt more fitting to the game type.
+
 User feedback also helped to test for bugs. Any bugs found from user testing are listed in the [Bugs](#bugs) section.
 
 ## Site Testing

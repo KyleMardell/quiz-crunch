@@ -194,7 +194,7 @@ main {
 }
 
 #question-amount {
-    border: 2px solid var(--green);
+    border: 2px solid var(--yellow);
 }
 
 #category-choice {
@@ -209,7 +209,8 @@ main {
 }
 
 #submit-choices {
-    border: 2px solid var(--yellow);
+    border: 2px solid var(--green);
+    color: var(--green);
     font-size: 2rem;
     height: 35px;
 }
