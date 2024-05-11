@@ -48,7 +48,7 @@ I used 2 similar looking fonts to add to the theme of the site. The font used fo
 
 ### Logo
 
-I used Microsoft Paint and the chosen colour palette to create a simple logo. I used question marks and exclamation marks to make a fun and vibrant logo.
+I used Microsoft Paint and the chosen colour palette to create a simple logo. I used question marks and exclamation marks to make a fun and vibrant logo. I then ran the image through the AI image generator, [imagine.art]](https://www.imagine.art/) to create a professional, fun looking logo. Although the AI image generator changed some of the colours used in the image, i feel as though the logo fit the theme of the site very well. 
 
 ![Logo](/assets/images/logo.webp)
 
