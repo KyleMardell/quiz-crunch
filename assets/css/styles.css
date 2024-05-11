@@ -283,7 +283,7 @@ main {
     border: 2px solid var(--red);
 }
 
-#feedback-text{
+#feedback-text {
     margin-top: 20px;
     color: var(--green);
 }
@@ -352,6 +352,10 @@ main {
         font-size: 3.5rem;
     }
 
+    #logo-text:hover {
+        cursor: pointer;
+    }
+
     /* Main Content */
     main {
         margin-top: 75px;
@@ -385,9 +389,17 @@ main {
         max-width: 300px;
     }
 
+    #quiz-mode-buttons>button:hover {
+        cursor: pointer;
+    }
+
     #show-scores-btn {
         font-size: 1.5rem;
         max-width: 500px;
+    }
+
+    #show-scores-btn:hover {
+        cursor: pointer;
     }
 
     /* Choices section */
@@ -421,6 +433,22 @@ main {
         font-size: 1.5rem;
     }
 
+    #question-amount:hover {
+        cursor: pointer;
+    }
+
+    #category-choice:hover {
+        cursor: pointer;
+    }
+
+    #difficulty-choice>input:hover {
+        cursor: pointer;
+    }
+
+    #submit-choices:hover {
+        cursor: pointer;
+    }
+
     /* Question section */
     #ready-area>h2 {
         font-size: 2.5rem;
@@ -434,6 +462,10 @@ main {
         min-width: 300px;
         min-height: 50px;
         font-size: 2rem;
+    }
+
+    #play-btn:hover {
+        cursor: pointer;
     }
 
     #user-name {
@@ -456,6 +488,10 @@ main {
         max-width: 800px;
     }
 
+    .answer-btn:hover {
+        cursor: pointer;
+    }
+
     /* Score section */
     #score-section>h2 {
         font-size: 5rem;
@@ -476,5 +512,9 @@ main {
     #play-again {
         height: 75px;
         font-size: 2.5rem;
+    }
+
+    #play-again:hover {
+        cursor: pointer;
     }
 }
