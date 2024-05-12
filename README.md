@@ -58,13 +58,22 @@ Before developing the site I mocked up some simple wire-frames of some of the se
 
 [Mobile Wireframes](/media/design/wireframe.png)
 
+### JavaScript
+
+When designing the site, I wanted to think about future development and make my code as easily readable and maintainable as possible.
+With this in mind, when developing the site one of the first functions I created was, a re-usable function that can easily display and hide sections, seeming to switch between pages. All sections are declared in global variables at the beginning of the JavaScript file and can be easily expanded or referenced. The function takes 2 parameters, the current section displayed, and the new section to display. If a section was added to the site in the future, it can be added and displayed with relative ease.
+
+While developing the site functionality, I refactored a large amount of the code. I tried to keep to an atomic function style, meaning each function does one specific task. However there are cases where it felt more readable to have a function complete multiple tasks. 
+The most notable function is the "playQuiz" function. This is essentially the game loop and is responsible for displaying all the questions, until the quiz ends and is the largest function in the script.
+I could continue to refactor the code, but at a potential detrement to its readability for myself or anyone else who may expand on or further develop the site. 
+
 ## Features
 
 The site is made up of one single page, split into 5 different sections, with only one section being shown at once. The 5 sections are welcome, form, ready, quiz and highscores.
 
 From the welcome section the user can decide to choose their own quiz, play a random 50 quwstion quiz or view their local highscores. 
 
-When playing the quiz, the question will be shown with 4 answers each in their own box. The user must press/click on their chosen answer to submit it. Once an answer has been pressed, the correct answers border is momentarily changed to green and all incorrect answers to red. There is also a "correct / wrong" feedback message displayed in place of the current score. The next question is automatically displayed until all questions have been played. There is no time limit to any questions.
+When playing the quiz, the question will be shown with 4 answers each in their own box. The user must press/click on their chosen answer to submit it. Once an answer has been pressed, the correct answer border is momentarily changed to green and all incorrect answers to red. There is also a "correct / wrong" feedback message displayed in place of the current score. The next question is automatically displayed until all questions have been played. There is no time limit to any questions.
 
 Once all questions have been answered, the scores section is displayed, showing the ended quiz score and the top 5 highscores. This page can be viewed before playing a quiz, with a "no score to display" message shown.
 

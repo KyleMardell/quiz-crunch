@@ -96,7 +96,6 @@ async function fetchQuizQuestions(url) {
 
     } catch (error) {
         // If an error occurs, display an alert and return to the welcome section
-        console.log(error);
         alert("An error ocurred. Please try again.");
         displayWelcomeSection();
     }
