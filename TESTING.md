@@ -4,6 +4,17 @@ Testing in development was done using Google Chrome Developer Tools on a Windows
 
 The site was deployed to GitHub Pages early in development to initially check that design features were displayed as intended, and later in development as a way to check for the correct functionality of interactive features. I would test the deployed sites functionality after every coding session to ensure it was performing as intnded.
 
+## Contents
+- [Validator](#validator)
+- [Lighthouse](#lighthouse)
+- [Wave](#wave)
+- [Site Testing](#site-testing)
+    - [In Development](#testing-in-development)
+    - [User Testing](#user-testing)
+- [Bugs](#bugs)
+    - [Fixed Bugs](#fixed-in-development)
+    - [Known Bugs](#known-bugs)
+
 ## Validator
 
 The following validation tools were used to validate the site code.
@@ -31,7 +42,17 @@ I ran the website through WAVE, the Web Accessibility Evaluation Tool, to check 
 - [WAVE Validation Results](/media/testing/wave-summary.png)
 - [WAVE Validation Details](/media/testing/wave-details.png)
 
-## User Testing
+## Site Testing
+
+### Testing in Development
+
+- HTML & CSS
+    While developing the site, I used Google Chrome Developer Tools to check the layout and responsiveness of the site. Developing from a mobile first perspective, using the latest "Galaxy Z Fold" screen size as my initial design platform, and limiting the section width on larger screens to create a similar layout across all screen sizes, with increased text size to make use of the additional screen space. 
+
+- JavaScript
+    Testing JavaScript in development was done with a combination of Google Chrome Developer Tools and the Console Log function. I used the console log to display messages when a user clicked a button, the data from the API, and multiple variable values to check that the code was behaving as intended. Once I was confident that the site was working as expected, I removed all the console logs to make my code cleaner and more readable. If any bugs were found, I would console log values in the area of the bug to try find the cause and create a fix.
+
+### User Testing
 
 Later in the development process, I asked some friends and course peers to test the site for usability and potential bugs. Overall, initial feedback was positive, with no major design changes or changes to the flow of the site needed. 
 
@@ -43,15 +64,10 @@ Some users feedback was that the high-score mode should be named differently, su
 
 User feedback also helped to test for bugs. Any bugs found from user testing are listed in the [Bugs](#bugs) section.
 
-## Site Testing
+### Manual Testing
 
-### Testing in Development
-
-- HTML & CSS
-    While developing the site, I used Google Chrome Developer Tools to check the layout and responsiveness of the site. Developing from a mobile first perspective, using the latest "Galaxy Z Fold" screen size as my initial design platform, and limiting the section width on larger screens to create a similar layout across all screen sizes, with increased text size to make use of the additional screen space. 
-
-- JavaScript
-    Testing JavaScript in development was done with a combination of Google Chrome Developer Tools and the Console Log function. I used the console log to display messages when a user clicked a button, the data from the API, and multiple variable values to check that the code was behaving as intended. Once I was confident that the site was working as expected, I removed all the console logs to make my code cleaner and more readable. If any bugs were found, I would console log values in the area of the bug to try find the cause and create a fix.
+| Feature | Expected Outcome | Test Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
 
 ## Bugs
 
@@ -63,8 +79,8 @@ User feedback also helped to test for bugs. Any bugs found from user testing are
 
 ### Known bugs
 
-- A bug where text shows special character codes. I have added a number of special character codes to a regex function, but there are over 100 commonly in use today. For this project, I felt it was sufficient to add a few main ones to catch the most commonly encountered character codes, although the others will be shown.
+- A bug where text shows special character codes. I have added a number of special character codes to a regex function, but there are over 100 commonly in use today. For this project, I felt it was sufficient to add a few main ones to catch the most commonly encountered character codes, although the others will be shown in either the question or the answer text.
 
 - If the user tries to get too many quiz question calls from the API, it can cause an error. This is caused by calling the API too many times too quickly. When this happens, I have implemented an alert message and navigated the user back to the welcome section.
 
-- A bug where all answer boxes are displayed in red after a user presses an answer. This bug is very occasional.
+- A bug where all answer boxes are displayed in red after a user presses an answer. Scores are still counted, and feedback is shown in text form. This bug is very occasional and intermittent and would therefore take a larger amount of time than feasible for this project to fix. I wish to return to this project in the future and resolve this bug.

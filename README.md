@@ -10,6 +10,36 @@ Quiz Crunch is a website aimed at trivia enthusiasts looking to test their knowl
 
 ## Contents
 
+- [User Experience](#user-experience)
+    - [First Time Visitor Goals](#first-time-visitor-goals)
+    - [Returning Visitor Goals](#returning-visitor-goals)
+- [Design](#design)
+    - [Colour Scheme](#colour-scheme)
+    - [Typography](#typography)
+    - [Logo](#logo)
+    - [Wireframes](#wireframes)
+- [Features](#features)
+    - [Existing Features](#existing-features)
+        - [Favicon](#favicon)
+        - [Nav Bar](#navigation-bar)
+        - [Welcome Section](#welcome-section)
+        - [Form Section](#form-section)
+        - [Ready Section](#ready-section)
+        - [Quiz Section](#quiz-section)
+        - [Scores Section](#scores-section)
+    - [Accessibility](#accessibility)
+    - [JavaScript](#javascript)
+    - [Future Features](#features-to-add-in-the-future)
+- [Deployment](#deployment)
+    - [GitHub Deployment](#github-deployment)
+    - [Fork Repository](#fork-repositary)
+    - [Clone](#clone-repositary)
+- [Testing](#testing)
+- [Credits](#credits)
+    - [Local Storage](#local-storage)
+    - [API](#api)
+    - [Logo](#logo-image)
+
 - - -
 
 ## User Experience
@@ -57,15 +87,6 @@ I used Microsoft Paint and the chosen colour palette to create a simple logo. I 
 Before developing the site, I mocked up some simple wireframes of some of the sections, in a mobile screen format. This helped when creating the sections and understanding the flow of the site, aiding in easier development. I ended up expanding on the sections in my initial wireframe although it helped establish a theme for the site. I made the site responsive by limiting the width to maintain a similar look to my initial wire-frame designs across all screen sizes.
 
 [Mobile Wireframes](/media/design/wireframe.png)
-
-### JavaScript
-
-When designing the site, I wanted to think about future development and make my code as easily readable and maintainable as possible.
-With this in mind, when developing the site, one of the first functions I created was a re-usable function that can easily display and hide sections, seeming to switch between pages. All sections are declared as global variables at the beginning of the JavaScript file and can be easily expanded or referenced. The function takes 2 parameters: the current section displayed, and the new section to display. If a section is added to the site in the future, it can be added and displayed with relative ease.
-
-While developing the site's functionality, I refactored a large amount of the code. I tried to keep to an atomic function style, meaning each function does one specific task. However, there are cases where it feels more readable to have a function complete multiple tasks. 
-The most notable function is the "playQuiz" function. This is essentially the game loop, which is responsible for displaying all the questions, until the quiz ends and is the largest function in the script.
-I could continue to refactor the code, but at a potential disadvantage to its readability for myself or anyone else who may expand on or further develop the site. 
 
 ## Features
 
@@ -161,6 +182,18 @@ The scores section is where the user can view high scores. These high scores are
 
 As I wanted to make a simple quiz site for any player, accessibility was always in mind when developing the site. I made sure to use semantic HTML for screen reader users and a high contrast colour palette for visual aids. As the site has a simple layout, I also tried to make the text as large as possible without overly compromising the design of the site.
 
+### JavaScript
+
+When developing the site, I wanted to think about future development and make my code as easily readable and maintainable as possible.
+
+With this in mind, when developing the site, one of the first functions I created was a re-usable function that can easily display and hide sections, seeming to switch between pages. All sections are declared as global variables at the beginning of the JavaScript file and can be easily expanded or referenced. The function takes 2 parameters: the current section displayed and the new section to display. If a section is added to the site in the future, it can be added and displayed with relative ease.
+
+While developing the site's functionality, I refactored a large amount of the code. I tried to keep to an atomic function style, meaning each function does one specific task.
+
+However, there are cases where it feels more readable to have a function complete multiple tasks. 
+The most notable function is the "playQuiz" function. This is essentially the game loop, which is responsible for displaying all the questions and keeping score until the quiz ends and is the largest function in the script.
+I could continue to refactor the code, but at a potential disadvantage to its readability for myself or anyone else who may expand on or further develop the site. 
+
 ### Features to Add in the Future
 
 In the future, i would like to improve the site by adding the following features:
@@ -212,7 +245,7 @@ In the future, i would like to improve the site by adding the following features
 
 ### Local Storage
 
-I learned about local storage through the [freeCodeCamp](https://www.freecodecamp.org/learn/), and reading the [w3schools](https://www.w3schools.com/jsref/prop_win_localstorage.asp) documentation. I then watched a YouTube tutorial by [James Q Quick](https://www.youtube.com/@JamesQQuick) to see how to use local storage in practice and applied those methods in my code to create saved high scores.
+I learned about local storage through the [freeCodeCamp](https://www.freecodecamp.org/learn/), and reading the [w3schools](https://www.w3schools.com/jsref/prop_win_localstorage.asp) documentation. I then watched a YouTube tutorial by [James Q Quick](https://www.youtube.com/watch?v=DFhmNLKwwGw&t=562s) to see how to use local storage in practice and applied those methods in my code to create saved high scores.
 
 ### API
 
