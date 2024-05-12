@@ -249,7 +249,7 @@ I learned about local storage through the [freeCodeCamp](https://www.freecodecam
 
 ### API
 
-I learned the use of API's (Application Programming Interface) through [freeCodeCamps](https://www.youtube.com/watch?v=WXsD0ZgxjRw&t=8252s) YouTube course, and followed a YouTube tutorial on the [Pokemon API](https://www.youtube.com/watch?v=37vxWr0WgQk&t=673s) to get a better understanding of API's in practice. I also created a small project using a few different APIs before applying these methods to my code for Quiz Crunch.
+I learned the use of API's (Application Programming Interface) through [freeCodeCamps](https://www.youtube.com/watch?v=WXsD0ZgxjRw&t=8252s) YouTube course, and followed a [YouTube tutorial](https://www.youtube.com/watch?v=37vxWr0WgQk&t=673s) on the [Pokemon API](https://pokeapi.co/) to get a better understanding of API's in practice. I also created a small project using a few different APIs before applying these methods to my code for Quiz Crunch.
 The API used for this site is the [Open Trivia Database](https://opentdb.com/).
 
 ### Logo Image
