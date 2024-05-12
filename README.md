@@ -78,7 +78,7 @@ I used 2 similar-looking fonts to add to the theme of the site. The font used fo
 
 ### Logo
 
-I used Microsoft Paint and the chosen colour palette to create a simple logo. I used question marks and exclamation marks to make a fun and vibrant logo. I then ran the image through the AI image generator, [imagine.art]](https://www.imagine.art/) to create a professional, fun looking logo. Although the AI image generator changed some of the colours used in the image, I feel as though the logo fits the theme of the site very well. 
+I used Microsoft Paint and the chosen colour palette to create a simple logo. I used question marks and exclamation marks to make a fun and vibrant logo. I then ran the image through the AI image generator, [imagine.art](https://www.imagine.art/) to create a professional, fun looking logo. Although the AI image generator changed some of the colours used in the image, I feel as though the logo fits the theme of the site very well. 
 
 ![Logo](/assets/images/logo.webp)
 
@@ -92,7 +92,7 @@ Before developing the site, I mocked up some simple wireframes of some of the se
 
 The site is made up of one single page, split into 5 different sections, with only one section being shown at a time. The 5 sections are welcome, form, ready, quiz, and high scores.
 
-From the welcome section, the user can decide to choose their own quiz, play a random 50 question quiz, or view their local highscores. 
+From the welcome section, the user can decide to choose their own quiz, play a random 50 question quiz, or view their local high scores. 
 
 When playing the quiz, the question will be shown with 4 answers, each in their own box. The user must press or click on their chosen answer to submit it. Once an answer has been pressed, the correct answer border is momentarily changed to green and all incorrect answers to red. There is also a "correct / wrong" feedback message displayed in place of the current score. The next question is automatically displayed until all questions have been played. There is no time limit for any questions.
 
@@ -102,7 +102,7 @@ Once all questions have been answered, the scores section is displayed, showing 
 
 #### Favicon
 
-I created a simple favicon using https://favicon.io/. I used the colours from my colour palette and the font from the site, to follow the theme.
+I created a simple favicon using https://favicon.io/. I used the colours from my colour palette and the font from the site, with the letters "QC", to follow the site's theme.
 
 ![Favicon](/assets/favicon/android-chrome-192x192.png)
 
