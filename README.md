@@ -1,5 +1,5 @@
 # Quiz Crunch
-Quiz Crunch is a website aimed at trivia enthusiasts looking to test their knowledge, learn new trivia, and play for a local high score. Visitors to the site can choose to play a high score mode of 50 random questions, alternatively pick their own quiz, with options for the number of questions, question category, and difficulty. Highscores can be viewed in the high score section.
+Quiz Crunch is a website aimed at trivia enthusiasts looking to play a fun quiz, test their knowledge, learn new trivia, and play for a local high score. Visitors to the site can choose to play a marathon mode of 50 random questions or alternatively pick their own quiz, with options for the number of questions, question category, and difficulty. High scores can be viewed in the high score section.
 
 ![Responsive Mockup](/media/screenshots/responsive.png)
 
@@ -128,7 +128,7 @@ From here, users can:
 
 #### Form Section
 
-Users can choose their own quiz to play, with options for the number of questions, difficulty (easy, medium, and hard), and category (any, general knowledge, video games, music, sport, or film). Scores from a user selected quiz also count towards the local highscores.
+Users can choose their own quiz to play, with options for the number of questions, difficulty (easy, medium, and hard), and category (any, general knowledge, video games, music, sport, or film). Scores from a user-selected quiz also count towards the local highscores. This section gives the user the option to play different types of quizzes, giving the player more opportunity to use the site. For example, a user could create a short, easy quiz to fill a couple of minutes (maybe waiting for a bus) or a longer and harder quiz that may take more time (still waiting for a bus). 
 
 ![Form Tablet](/media/screenshots/form-tablet.png)
 
