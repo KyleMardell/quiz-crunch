@@ -68,6 +68,51 @@ User feedback also helped to test for bugs. Any bugs found from user testing are
 
 | Feature | Expected Outcome | Test Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
+| NAVBAR |
+| Logo text link | When clicked, redirects to the Welcome Section | Clicked logo | Redirected to Welcome Section | Pass |
+| Logo text link: hover (desktop) | Changes curser to pointer | Hovered mouse over link | Curser changed to pointer | Pass |
+| WELCOME SECTION |
+| Choose Quiz button | When clicked, redirects to the Form Section | Clicked button | Redirected to Form Section | Pass |
+| Choose Quiz button: hover (desktop) | Changes curser to pointer | Hovered mouse over button | Curser changed to pointer | Pass |
+| Marathon Mode button | When clicked, redirects to the Ready Section | Clicked button | Redirected to Ready Section | Pass |
+| Marathon Mode button: hover (desktop) | Changes curser to pointer | Hovered mouse over button | Curser changed to pointer | Pass |
+| Show High Scores button: no quiz played | When clicked, redirects to the Scores Section, message displayed | Clicked button | Redirected to Scores section, message showing "No quiz score yet" | Pass |
+| Show High Scores button: quiz played | When clicked, redirects to the Scores Section, displays last quiz score | Clicked button | Redirected to Scores section, displaying last quiz score | Pass |
+| Show High Scores button: hover (desktop) | Changes curser to pointer | Hovered mouse over button | Curser changed to pointer | Pass |
+| FORM SECTION |
+| Number of Questions input: up-arrow | When clicked, allows user to increase the amount of questions (50 max) | Up-arrow button pressed | Question amount increases, stopping at 50 | Pass |
+| Number of Questions input: down-arrow | When clicked, allows user to decrease the amount of questions (5 min) | Down-arrow button pressed | Question amount decreases, stopping at 5 | Pass |
+| Number of Questions input: keyboard | Allows only numbers between 5 and 50 | Input letters & input numbers out of range | Warning alert displayed | Pass |
+| Number of Questions input: hover (desktop) | Changes curser to pointer | Hovered mouse over input | Curser changed to pointer | Pass |
+| Category dropdown | Options displayed | Clicked dropdown | Option dropdown shown | Pass |
+| Category "Any" option | Any option selected | Clicked Any option | Any option selected | Pass |
+| Category "General Knowlegde" option | General Knowlegde option selected | Clicked General Knowlegde option | General Knowlegde option selected | Pass |
+| Category "Video Games" option | Video Games option selected | Clicked Video Games option | Video Games option selected | Pass |
+| Category "Music" option | Music option selected | Clicked Music option | Music option selected | Pass |
+| Category "Sport" option | Sport option selected | Clicked Sport option | Sport option selected | Pass |
+| Category "Film" option | Film option selected | Clicked Film option | Film option selected | Pass |
+| Category dropdown: hover (desktop) | Changes curser to pointer | Hovered mouse over dropdown | Curser changed to pointer | Pass |
+| Difficulty Easy radio button | When clicked, selects "Easy" and un-chekcs all other radio buttons | Clicked radio button | Easy option selected only | Pass |
+| Difficulty Easy radio button: hover (desktop) | Changes curser to pointer | Hovered mouse over button | Curser changed to pointer | Pass |
+| Difficulty Medium radio button | When clicked, selects "Medium" and un-chekcs all other radio buttons | Clicked radio button | Medium option selected only | Pass |
+| Difficulty Medium radio button: hover (desktop) | Changes curser to pointer | Hovered mouse over button | Curser changed to pointer | Pass |
+| Difficulty Hard radio button | When clicked, selects "Hard" and un-chekcs all other radio buttons | Clicked radio button | Hard option selected only | Pass |
+| Difficulty Hard radio button: hover (desktop) | Changes curser to pointer | Hovered mouse over button | Curser changed to pointer | Pass |
+| Get Questions Button | When clicked, redirects to Ready Section (form correctly filled) | Clicked button | Redirected to Ready Section | Pass |
+| Get Questions Button | When clicked, redirects to Ready Section (form in-correctly filled) | Clicked button | Warning alert displayed | Pass |
+| READY SECTION |
+| Name input | When clicked, allows user to input their name | Clicked input, entered name | Name Entered | Pass |
+| Name input: hover (desktop) | Changes curser to pointer | Hovered mouse over link | Curser changed to pointer | Pass |
+| Let's Play button | When clicked, redirects to Quiz Section (name input entered) | Clicked button | Redirected to Quiz Section | Pass |
+| Let's Play button | When clicked, displays warning alert (name input empty) | Clicked button | Alert warning displayed | Pass |
+| Let's Play button: hover (desktop) | Changes curser to pointer | Hovered mouse over link | Curser changed to pointer | Pass |
+| QUIZ SECTION |
+| Answer button: correct | When clicked, button turns green and all other button turn red. Text feeback displayed in green. New question displayed with increased score. | Clicked correct answer button | Button turned green, all other buttons turned red. Green "correct" message displayed. New question displayed, score increased | Pass |
+| Answer button: incorrect | When clicked, button turns red (with other incorrect answers) and correct answer turns green. Text feeback displayed in red. New question displayed. | Clicked incorrect answer button | Button turned red, correct answer turned green. Red "wrong" message displayed. New question displayed | Pass |
+| Answer button: final question | When clicked, displays feedback with delay, then redirects to Scores Section and displays score | Clicked answer button | Feedback displayed, redirected to Scores Section. Score displayed | Pass |
+| Answer button: hover (desktop) | Changes curser to pointer | Hovered mouse over link | Curser changed to pointer | Pass |
+| SCORES SECTION |
+| Play New Quiz button | When clicked, redirects to Welcome Section | Clicked button | Redirected to Welcome Section | Pass |
 
 ## Bugs
 
