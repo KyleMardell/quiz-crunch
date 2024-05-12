@@ -52,6 +52,11 @@ I ran the website through WAVE, the Web Accessibility Evaluation Tool, to check 
 - JavaScript
     Testing JavaScript in development was done with a combination of Google Chrome Developer Tools and the Console Log function. I used the console log to display messages when a user clicked a button, the data from the API, and multiple variable values to check that the code was behaving as intended. Once I was confident that the site was working as expected, I removed all the console logs to make my code cleaner and more readable. If any bugs were found, I would console log values in the area of the bug to try find the cause and create a fix.
 
+- Device Testing
+    Durin development I would frequently test the site on multiple devices I had available to me. I tested using an iPhone 14 and 15 with Safari and Chrome web browsers. I also tested the site using an iPad Pro 2022 model, again using Safari and Chrome. I also tested on a PC using Windows 11 with Chrome, Firefox, and Edge web browsers.
+    I am glad I used real life devices at the end of each coding session, as layouts were often viewed differently due to browser controls taking up a portion of the screen.
+    I had friends test the site on their devices also, and I found that on smaller devices with larger web browser control on screen, some of the sections required scrolling. Although I could not record which devices and browsers were being used, this did not affect the overall feel of the site.
+
 ### User Testing
 
 Later in the development process, I asked some friends and course peers to test the site for usability and potential bugs. Overall, initial feedback was positive, with no major design changes or changes to the flow of the site needed. 
