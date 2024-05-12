@@ -101,6 +101,7 @@ main {
     max-width: 100px;
     align-self: center;
     margin: 10px;
+    border-radius: 50%;
 }
 
 .input-style {
