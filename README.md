@@ -27,6 +27,7 @@ Quiz Crunch is a website aimed at trivia enthusiasts looking to play a fun quiz,
         - [Ready Section](#ready-section)
         - [Quiz Section](#quiz-section)
         - [Scores Section](#scores-section)
+        - [404 Page](#404-page)
     - [Accessibility](#accessibility)
     - [JavaScript](#javascript)
     - [Future Features](#features-to-add-in-the-future)
@@ -177,6 +178,14 @@ The scores section is where the user can view high scores. These high scores are
 [Mobile Screenshot](/media/screenshots/scores-mobile.png)
 
 [Desktop Screenshot](/media/screenshots/scores-desktop.png)
+
+#### 404 Page
+
+The 404 page acts as an error page in the case of a page not found and keeps the user within the site. The only clickable link, is the header text, which redirects you to the index page.
+
+![404 Tablet](/media/screenshots/404-page-tablet.png)
+[Mobile Screenshot](/media/screenshots/404-page-mobile.png)
+[Desktop Screenshot](/media/screenshots/404-page-desktop.png)
 
 ### Accessibility
 
