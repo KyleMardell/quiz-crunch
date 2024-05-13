@@ -31,7 +31,8 @@ body {
 h1,
 h2,
 h3,
-h4 {
+h4,
+a {
     font-family: "Bungee", sans-serif;
 }
 
@@ -336,6 +337,26 @@ main {
     margin-left: 20px;
 }
 
+/* 404 Page */
+#error {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 75px);
+    justify-content: center;
+}
+
+.home-link {
+    color: var(--off-white);
+    text-decoration: none;
+    font-size: 2rem;
+    line-height: 50px;
+}
+
+.error-message {
+    text-align: center;
+    font-size: 2rem;
+}
+
 /* Media query: tablet size screens and above(min 768px) */
 @media screen and (min-width: 768px) {
 
@@ -517,5 +538,14 @@ main {
 
     #play-again:hover {
         cursor: pointer;
+    }
+
+    /* 404 Page */
+    .home-link {
+        font-size: 4rem;
+    }
+
+    .error-message {
+        font-size: 3.5rem;
     }
 }

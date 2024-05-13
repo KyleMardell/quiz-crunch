@@ -201,6 +201,7 @@ In the future, i would like to improve the site by adding the following features
 - Mode specific highscores
 - Online highscores
 - Additional categories
+- Further username validation (numbers, blanks spaces etc)
 
 ## Deployment
 - The site was deployed using GitHub Pages.
